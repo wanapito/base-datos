@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)https://jsequeiros.com/error-sql-ora-65096-nombre-de-usuario-o-rol-comun-no-valido -->
+<html lang="es" dir="ltr" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+<link rel="shortcut icon" href="https://jsequeiros.com/sites/default/files/faviconjsequeiros_0.ico" type="image/vnd.microsoft.icon">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta name="description" content="Problema: Al ejecutar el siguiente script para la creación de un usuario en la base de datos oracle: CREATE USER colegio IDENTIFIED BY P4$$w0rd DEFAULT TABLESPACE COLEGIO TEMPORARY TABLESPACE TEMP QUOTA 20M on COLEGIO; Aparece el siguiente mensaje de error: Texto del mensaje de error /*Error que empieza en la línea: 10 del comando - CREATE USER colegio IDENTIFIED BY P4$$w0rd">
+<meta name="generator" content="Drupal 7 (http://drupal.org)">
+<meta name="rights" content="www.jsequeiros.com Todos los derechos reservados 2009-2012">
+<link rel="canonical" href="https://jsequeiros.com/error-sql-ora-65096-nombre-de-usuario-o-rol-comun-no-valido">
+<link rel="shortlink" href="https://jsequeiros.com/node/403">
+  <title>Error SQL: ORA-65096: nombre de usuario o rol común no válido | Blog de Jesús Sequeiros Arone</title>  
+  <link type="text/css" rel="stylesheet" href="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/css_TsVRTbLFUpEZAfw-_bWPJu840QT523CPjUVJ5MRWfyk.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/css_YH_e7FZ-kaCu4rjhpiDlXJcCHGF5OqrIBRLSGZk6N3E.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/css_nr32d3mLonTQuIVp13CqI18DFcCx1QbjL1waSojxlm0.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/css_F2Ir7NEKbFBSsI4x0ZM0xcDRqFAOqHI5YMQXdJr4los.css" media="all">
+
+<!--[if (lt IE 9)&(!IEMobile)]>
+<link type="text/css" rel="stylesheet" href="https://jsequeiros.com/sites/default/files/css/css_s9HYqsDjTNVMbAWXzbrtnUJw156a6uqQzGJx4n0LZGg.css" media="all" />
+<![endif]-->
+
+<!--[if gte IE 9]><!-->
+<link type="text/css" rel="stylesheet" href="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/css_IEFrlLzS9HbncHi_31V6oLdXUqnRrehS3SqMbecvpio.css" media="all">
+<!--<![endif]-->
+  <script async="" src="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/analytics.js.descarga"></script><script type="text/javascript" src="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/js_bHixdNqIm_fGV7c3IlqVJl-OQXz4T0rdcigI0kCjuGg.js.descarga"></script>
+<script type="text/javascript" src="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/js_VLzcTlHjEta3lOp0hGGf7IXE9Dndr9UFkXbZRsozjXI.js.descarga"></script>
+<script type="text/javascript" src="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/js_PwIJT1_n-wtGkC2GW94aqI6wMiyySPOuZfGUZXAurHY.js.descarga"></script>
+<script type="text/javascript" src="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/js_jg7chakhbmP_OI43kKRN2IEYJvKLyYjpnwRQznlNTBQ.js.descarga"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"js","theme_token":"U2kF6Sl5ZjPxf9Iv9ZYuX2UjzcQSjZqrn5ZoxXD3gV0","js":{"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/libraries\/prettify\/src\/prettify.js":1,"sites\/all\/libraries\/prettify\/src\/lang-css.js":1,"sites\/all\/libraries\/prettify\/src\/lang-sql.js":1,"sites\/all\/modules\/nice_menus\/js\/jquery.bgiframe.js":1,"sites\/all\/modules\/nice_menus\/js\/jquery.hoverIntent.js":1,"sites\/all\/modules\/nice_menus\/js\/superfish.js":1,"sites\/all\/modules\/nice_menus\/js\/nice_menus.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"misc\/form.js":1,"public:\/\/languages\/es_h9vDPfzwJdCw2FvZdiNnr994OcvtxEtfAd2um6RyeXM.js":1,"sites\/all\/modules\/prettify\/prettify.loader.js":1,"sites\/all\/modules\/captcha\/captcha.js":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/js\/responsive_menus_simple.js":1,"misc\/textarea.js":1,"modules\/filter\/filter.js":1,"sites\/all\/themes\/omega\/omega\/js\/jquery.formalize.js":1,"sites\/all\/themes\/omega\/omega\/js\/omega-mediaqueries.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/nice_menus\/css\/nice_menus.css":1,"sites\/all\/modules\/nice_menus\/css\/nice_menus_default.css":1,"sites\/all\/modules\/adsense\/css\/adsense.css":1,"sites\/all\/modules\/responsive_menus\/styles\/responsive_menus_simple\/css\/responsive_menus_simple.css":1,"modules\/filter\/filter.css":1,"sites\/all\/themes\/omega\/alpha\/css\/alpha-reset.css":1,"sites\/all\/themes\/omega\/alpha\/css\/alpha-mobile.css":1,"sites\/all\/themes\/omega\/alpha\/css\/alpha-alpha.css":1,"sites\/all\/themes\/omega\/omega\/css\/formalize.css":1,"sites\/all\/themes\/omega\/omega\/css\/omega-text.css":1,"sites\/all\/themes\/omega\/omega\/css\/omega-branding.css":1,"sites\/all\/themes\/omega\/omega\/css\/omega-menu.css":1,"sites\/all\/themes\/omega\/omega\/css\/omega-forms.css":1,"sites\/all\/themes\/omega\/omega\/css\/omega-visuals.css":1,"sites\/all\/themes\/js\/css\/global.css":1,"sites\/all\/modules\/prettify\/styles\/drupalorg.css":1,"ie::normal::sites\/all\/themes\/js\/css\/js-alpha-default.css":1,"ie::normal::sites\/all\/themes\/js\/css\/js-alpha-default-normal.css":1,"ie::normal::sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-12.css":1,"narrow::sites\/all\/themes\/js\/css\/js-alpha-default.css":1,"narrow::sites\/all\/themes\/js\/css\/js-alpha-default-narrow.css":1,"sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/narrow\/alpha-default-narrow-12.css":1,"normal::sites\/all\/themes\/js\/css\/js-alpha-default.css":1,"normal::sites\/all\/themes\/js\/css\/js-alpha-default-normal.css":1,"sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-12.css":1,"wide::sites\/all\/themes\/js\/css\/js-alpha-default.css":1,"wide::sites\/all\/themes\/js\/css\/js-alpha-default-wide.css":1,"sites\/all\/themes\/omega\/alpha\/css\/grid\/alpha_default\/wide\/alpha-default-wide-12.css":1}},"prettify":{"linenums":false,"match":".content","nocode":"no-code","custom":[],"markup":{"code":true,"pre":true,"precode":false}},"nice_menus_options":{"delay":"800","speed":"fast"},"responsive_menus":[{"toggler_text":"\u2630 Menu","selectors":["#region-user-first"],"media_size":"480","media_unit":"px","absolute":"1","remove_attributes":"1","responsive_menus_style":"responsive_menus_simple"}],"urlIsAjaxTrusted":{"\/comment\/reply\/403":true,"\/error-sql-ora-65096-nombre-de-usuario-o-rol-comun-no-valido?destination=node\/403":true},"omega":{"layouts":{"primary":"normal","order":["narrow","normal","wide"],"queries":{"narrow":"all and (min-width: 740px) and (min-device-width: 740px), (max-device-width: 800px) and (min-width: 740px) and (orientation:landscape)","normal":"all and (min-width: 980px) and (min-device-width: 980px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)","wide":"all and (min-width: 1220px)"}}}});
+//--><!]]>
+</script>
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body class="html not-front not-logged-in page-node page-node- page-node-403 node-type-story context-error-sql-ora-65096-nombre-de-usuario-o-rol-comun-no-valido responsive-menus-load-processed link-control-extension" style="">
+  <div id="skip-link">
+    <a href="https://jsequeiros.com/error-sql-ora-65096-nombre-de-usuario-o-rol-comun-no-valido#main-content" class="element-invisible element-focusable">Pasar al contenido principal</a>
+  </div>
+  <div class="region region-page-top" id="region-page-top">
+  <div class="region-inner region-page-top-inner">
+      </div>
+</div>  <div class="page clearfix" id="page">
+      <header id="section-header" class="section section-header">
+  <div id="zone-user-wrapper" class="zone-wrapper zone-user-wrapper clearfix">  
+  <div id="zone-user" class="zone zone-user clearfix container-12">
+    <div data-mediasize="480" class="responsive-menus responsive-menus-0-0 absolute"><span class="toggler">☰ Menu</span><div class="grid-12 region region-user-first responsive-menus-simple" id="region-user-first">
+  <div class="region-inner region-user-first-inner">
+    <div class="block block-nice-menus block-1 block-nice-menus-1 odd block-without-title" id="block-nice-menus-1">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <ul class="nice-menu nice-menu-down nice-menu-secondary-menu nice-menus-processed sf-js-enabled sf-arrows" id="nice-menu-1"><li class="menu-155 menu-path-front first odd "><a href="https://jsequeiros.com/" title="">Inicio</a></li>
+<li class="menu-379 menuparent  menu-path-node-52  even"><a href="https://jsequeiros.com/manuales-y-ejercicios-de-excel-word-power-point-y-windows-xp.html" title="Manuales y Ejercicios de Excel 2007 2010, Word 2007 2010, Power Point 2007 2010, y Windows XP." class="sf-with-ul">Manuales y Ejercicios</a><ul style="display: none;" id="rm-no-id-2" class="rm-no-class"><li class="menu-359 menuparent  menu-path-node-18 first odd"><a href="https://jsequeiros.com/ejercicios-excel/excel-2003-2007-2010-2013.html" title="Manual y ejercicios de Excel 2007 aplicables a Excel 2010." class="sf-with-ul">Excel 2007 2010</a><ul style="display: none;" id="rm-no-id-3" class="rm-no-class"><li class="menu-614 menu-path-node-195 first odd "><a href="https://jsequeiros.com/ejercicios-excel/ejercicio-practico-01-excel-2007-2010-2013.html" title="Ejercicio Práctico 01 Excel 2007, 2010, 2013">Ejercicio Práctico 01 Excel</a></li>
+<li class="menu-613 menu-path-node-196  even "><a href="https://jsequeiros.com/ejercicios-excel/ejercicio-practico-02-excel-2007-2010-2013.html" title="Ejercicio Práctico 02 Excel 2007, 2010, 2013">Ejercicio Práctico 02 Excel</a></li>
+<li class="menu-612 menu-path-node-197  odd "><a href="https://jsequeiros.com/ejercicios-excel/ejercicio-practico-03-excel-2007-2010-2013.html" title="Ejercicio  Práctico 03 Excel 2007, 2010, 2013">Ejercicio  Práctico 03 Excel</a></li>
+<li class="menu-615 menu-path-node-205  even "><a href="https://jsequeiros.com/ejercicios-excel/ejercicio-practico-04-excel-2007-2010-2013.html" title="Ejercicio Práctico 04 Excel 2007, 2010, 2013">Ejercicio Práctico 04 Excel</a></li>
+<li class="menu-616 menu-path-node-206  odd "><a href="https://jsequeiros.com/ejercicios-excel/ejercicio-practico-05-excel-2007-2010-2013.html" title="Ejercicio Práctico 05 Excel 2007, 2010, 2013">Ejercicio Práctico 05 Excel</a></li>
+<li class="menu-617 menu-path-node-207  even "><a href="https://jsequeiros.com/ejercicios-excel/ejercicio-practico-06-excel-2007-2010-2013.html" title="Ejercicio Práctico 06 Excel 2007, 2010, 2013">Ejercicio Práctico 06 Excel</a></li>
+<li class="menu-618 menu-path-node-208  odd "><a href="https://jsequeiros.com/ejercicios-excel/ejercicio-practico-07-excel-2007-2010-2013.html" title="Ejercicio Práctico 07 Excel 2007, 2010, 2013">Ejercicio Práctico 07 Excel</a></li>
+<li class="menu-619 menu-path-node-209  even "><a href="https://jsequeiros.com/ejercicios-excel/ejercicio-practico-08-excel-2007-2010-2013.html" title="Ejercicio Práctico 08 Excel 2007, 2010, 2013">Ejercicio Práctico 08 Excel</a></li>
+<li class="menu-620 menu-path-node-210  odd "><a href="https://jsequeiros.com/ejercicios-excel/ejercicio-practico-09-excel-2007-2010-2013.html" title="Ejercicio Práctico 09 Excel 2007, 2010, 2013">Ejercicio Práctico 09 Excel</a></li>
+<li class="menu-621 menu-path-node-211  even "><a href="https://jsequeiros.com/ejercicios-excel/ejercicio-practico-10-excel-2007-2010-2013.html" title="Ejercicio Práctico 10 Excel 2007, 2010, 2013">Ejercicio Práctico 10 Excel</a></li>
+<li class="menu-622 menu-path-node-212  odd "><a href="https://jsequeiros.com/ejercicios-excel/ejercicio-practico-11-excel-2007-2010-2013.html" title="Ejercicio Práctico 11 Excel 2007, 2010, 2013">Ejercicio Práctico 11 Excel</a></li>
+<li class="menu-623 menu-path-node-213  even last"><a href="https://jsequeiros.com/ejercicios-excel/ejercicio-practico-12-excel-2007-2010-2013.html" title="Ejercicio Práctico 12 Excel 2007, 2010, 2013">Ejercicio Práctico 12 Excel</a></li>
+</ul></li>
+<li class="menu-331 menu-path-node-33  even "><a href="https://jsequeiros.com/ejercicios-excel/soluciones-ejercicios-excel.html" title="Soluciones de los ejercicios planteados de Excel 2007 210.">Soluciones  Excel</a></li>
+<li class="menu-360 menuparent  menu-path-node-6  odd"><a href="https://jsequeiros.com/ejercicios-word/word.html" title="Manuales y ejercicios de Word 2007 2010." class="sf-with-ul">Word 2007 2010</a><ul style="display: none;" id="rm-no-id-4" class="rm-no-class"><li class="menu-680 menu-path-node-216 first odd "><a href="https://jsequeiros.com/ejercicios-word/ejercicio-practico-01-word-2007-2010-2013.html" title="Ejercicio Práctico 01 Word 2007, 2010, 2013">Ejercicio Práctico 01 Word</a></li>
+<li class="menu-681 menu-path-node-217  even "><a href="https://jsequeiros.com/ejercicios-word/ejercicio-practico-02-word-2007-2010-2013.html" title="Ejercicio Práctico 02 Word 2007, 2010, 2013">Ejercicio Práctico 02 Word</a></li>
+<li class="menu-682 menu-path-node-218  odd "><a href="https://jsequeiros.com/ejercicios-word/ejercicio-practico-03-word-2007-2010-2013.html" title="Ejercicio Práctico 03 Word 2007, 2010, 2013">Ejercicio Práctico 03 Word</a></li>
+<li class="menu-683 menu-path-node-219  even "><a href="https://jsequeiros.com/ejercicios-word/ejercicio-practico-04-word-2007-2010-2013.html" title="Ejercicio Práctico 04 Word 2007, 2010, 2013">Ejercicio Práctico 04 Word</a></li>
+<li class="menu-684 menu-path-node-220  odd "><a href="https://jsequeiros.com/ejercicios-word/ejercicio-practico-05-word-2007-2010-2013.html" title="Ejercicio Práctico 05 Word 2007, 2010, 2013">Ejercicio Práctico 05 Word</a></li>
+<li class="menu-685 menu-path-node-221  even "><a href="https://jsequeiros.com/ejercicios-word/ejercicio-practico-06-word-2007-2010-2013.html" title="Ejercicio Práctico 06 Word 2007, 2010, 2013">Ejercicio Práctico 06 Word</a></li>
+<li class="menu-686 menu-path-node-222  odd "><a href="https://jsequeiros.com/ejercicios-word/ejercicio-practico-07-word-2007-2010-2013.html" title="Ejercicio Práctico 07 Word 2007, 2010, 2013">Ejercicio Práctico 07 Word</a></li>
+<li class="menu-687 menu-path-node-223  even "><a href="https://jsequeiros.com/ejercicios-word/ejercicio-practico-08-word-2007-2010-2013.html" title="Ejercicio Práctico 08 Word 2007, 2010, 2013">Ejercicio Práctico 08 Word</a></li>
+<li class="menu-688 menu-path-node-224  odd "><a href="https://jsequeiros.com/ejercicios-word/ejercicio-practico-09-word-2007-2010-2013.html" title="Ejercicio Práctico 09 Word 2007, 2010, 2013">Ejercicio Práctico 09 Word</a></li>
+<li class="menu-692 menu-path-node-226  even "><a href="https://jsequeiros.com/ejercicios-word/ejercicio-practico-10-word-2007-2010-2013.html" title="Ejercicio Práctico 10 Word 2007, 2010, 2013">Ejercicio Práctico 10 Word</a></li>
+<li class="menu-693 menu-path-node-227  odd last"><a href="https://jsequeiros.com/ejercicios-word/ejercicio-practico-11-word-2007-2010-2013.html" title="Ejercicio Práctico 11 Word 2007, 2010, 2013">Ejercicio Práctico 11 Word</a></li>
+</ul></li>
+<li class="menu-361 menuparent  menu-path-node-20  even"><a href="https://jsequeiros.com/ejercicios-power-point/power-point-2007.html" title="Manuales y ejercicios de Power Point 2007 2010." class="sf-with-ul">Power Point 2007</a><ul style="display: none;" id="rm-no-id-5" class="rm-no-class"><li class="menu-611 menu-path-node-204 first odd "><a href="https://jsequeiros.com/ejercicios-power-point/ejercicio-practico-01-power-point-2007-2010-2013.html" title="Ejercicio Práctico 01 Power Point 2007, 2010, 2013">Ejercicio Práctico 01 Power Point</a></li>
+<li class="menu-694 menu-path-node-228  even "><a href="https://jsequeiros.com/ejercicios-power-point/ejercicio-practico-02-power-point-2007-2010-2013.html" title="Ejercicio Práctico 02 Power Point 2007, 2010, 2013">Ejercicio Práctico 02 Power Point</a></li>
+<li class="menu-695 menu-path-node-229  odd "><a href="https://jsequeiros.com/ejercicios-power-point/ejercicio-practico-03-power-point-2007-2010-2013.html" title="Ejercicio Práctico 03 Power Point 2007, 2010, 2013">Ejercicio Práctico 03 Power Point</a></li>
+<li class="menu-696 menu-path-node-230  even "><a href="https://jsequeiros.com/ejercicios-power-point/ejercicio-practico-04-power-point-2007-2010-2013.html" title="Ejercicio Práctico 04 Power Point 2007, 2010, 2013">Ejercicio Práctico 04 Power Point</a></li>
+<li class="menu-697 menu-path-node-231  odd last"><a href="https://jsequeiros.com/ejercicios-power-point/ejercicio-practico-05-power-point-2007-2010-2013.html" title="Ejercicio Práctico 05 Power Point 2007, 2010, 2013">Ejercicio Práctico 05 Power Point</a></li>
+</ul></li>
+<li class="menu-362 menu-path-node-2  odd "><a href="https://jsequeiros.com/windows-xp/windows-xp.html" title="Manuales y ejercicios de Windows XP.">Windows XP</a></li>
+<li class="menu-610 menu-path-node-286  even last"><a href="https://jsequeiros.com/ejercicios-para-aprender-access-2007-2010-2013.html" title="Ejercicios para aprender Acces">Ejercicios Acces</a></li>
+</ul></li>
+<li class="menu-5246 menu-path-jsequeiroscom-categoria-sql-sql-server  odd "><a href="http://jsequeiros.com/categoria/sql/sql-server" title="Temas de base de datos SQL Server">SQL Server</a></li>
+<li class="menu-166 menu-path-node-7  even "><a href="https://jsequeiros.com/mecanografia/programa-mecanet-para-aprender-digitar-con-los-10-dedos.html" title="Mecanografia Mecanet">Mecanografía</a></li>
+<li class="menu-1194 menu-path-node-289  odd "><a href="https://jsequeiros.com/a-cerca-de-jsequeiros.html" title="A cerca de JSequeiros">La web</a></li>
+<li class="menu-198 menu-path-contact  even last"><a href="https://jsequeiros.com/contactar.html" title="Formulario de contacto">Contactar</a></li>
+</ul>
+    </div>
+  </div>
+</div>  </div>
+</div></div>  </div>
+</div><div id="zone-branding-wrapper" class="zone-wrapper zone-branding-wrapper clearfix">  
+  <div id="zone-branding" class="zone zone-branding clearfix container-12">
+    <div class="grid-12 region region-branding" id="region-branding">
+  <div class="region-inner region-branding-inner">
+        <div class="branding-data clearfix">
+                        <hgroup class="site-name-slogan">        
+                                <h2 class="site-name"><a href="https://jsequeiros.com/" title="Inicio">Blog de Jesús Sequeiros Arone</a></h2>
+                                        <h6 class="site-slogan">Manuales y ejercicios de SQL Server, Excel, Word, Acces y más...</h6>
+              </hgroup>
+          </div>
+          </div>
+</div>  </div>
+</div><div id="zone-menu-wrapper" class="zone-wrapper zone-menu-wrapper clearfix">  
+  <div id="zone-menu" class="zone zone-menu clearfix container-12">
+    <div class="grid-12 region region-menu" id="region-menu">
+  <div class="region-inner region-menu-inner">
+        <nav class="navigation">
+            <h2 class="element-invisible">Menú secundario</h2><ul id="secondary-menu" class="links inline clearfix secondary-menu"><li class="menu-193 first"><a href="https://jsequeiros.com/ejercicios-word/word.html" title="Manuales y Ejercicios de Word 2007, Word 2010.">Word 2007</a></li><li class="menu-183"><a href="https://jsequeiros.com/ejercicios-excel/excel-2003-2007-2010-2013.html" title="Manuales y Ejercicios de Excel 2007 2010.">Excel 2003, 2007, 2010, 2013</a></li><li class="menu-191"><a href="https://jsequeiros.com/ejercicios-power-point/power-point-2007.html" title="Manuales y ejercicios de Power Point 2007, Power Point 2010.">Power Point 2007</a></li><li class="menu-202"><a href="https://jsequeiros.com/windows-xp/windows-xp.html" title="Manuales y Ejercicios de Windows XP">Windows XP</a></li><li class="menu-1191"><a href="https://jsequeiros.com/ejercicios-para-aprender-access-2007-2010-2013.html" title="Ejercicios para aprender excel">Ejercicios Acces</a></li><li class="menu-380"><a href="https://jsequeiros.com/ejercicios-excel/soluciones-ejercicios-excel.html" title="soluciones a los ejercicios de Excel 2007 2010.">Soluciones Excel</a></li><li class="menu-6628 last"><a href="https://jsequeiros.com/ejercicios-word/soluciones-de-los-ejercicios-word.html" title="soluciones de Word con las versiones 2007, 2010, 2013, 2016 y 2016.">Soluciones Word</a></li></ul>    </nav>
+          </div>
+</div>
+  </div>
+</div></header>    
+      <section id="section-content" class="section section-content">
+  <div id="zone-content-wrapper" class="zone-wrapper zone-content-wrapper clearfix">  
+  <div id="zone-content" class="zone zone-content clearfix container-12">    
+          <div id="breadcrumb" class="grid-12"><h2 class="element-invisible">Usted está aquí</h2><div class="breadcrumb"><a href="https://jsequeiros.com/">Inicio</a></div></div>
+        
+        <div class="grid-8 region region-content" id="region-content">
+  <div class="region-inner region-content-inner">
+    <a id="main-content"></a>
+                <h1 class="title" id="page-title">Error SQL: ORA-65096: nombre de usuario o rol común no válido</h1>
+                        <div class="block block-system block-main block-system-main odd block-without-title" id="block-system-main">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <article class="node node-story node-promoted node-published node-not-sticky author-jsequeiros odd clearfix" id="node-story-403">
+            <footer class="submitted">Jue, 27/02/2020 - 14:54 -- <span class="username">jsequeiros</span></footer>
+    
+  
+  <div class="content clearfix">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><h2>Problema:</h2>
+<p>Al ejecutar el siguiente script para la creación de un usuario en la base de datos oracle:</p>
+<pre class="prettyprint lang-sql prettyprinted" style=""><span class="kwd">CREATE</span><span class="pln"> </span><span class="kwd">USER</span><span class="pln"> colegio
+IDENTIFIED </span><span class="kwd">BY</span><span class="pln"> P4</span><span class="pun">$$</span><span class="pln">w0rd
+</span><span class="kwd">DEFAULT</span><span class="pln"> TABLESPACE COLEGIO
+TEMPORARY TABLESPACE TEMP
+QUOTA </span><span class="lit">20</span><span class="pln">M </span><span class="kwd">on</span><span class="pln"> COLEGIO</span><span class="pun">;</span></pre><p>Aparece el siguiente mensaje de error:</p>
+<p><img src="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/error-sql-ora-65096-nombre-de-usuario-o-rol-comun-no-valido.png" style=" max-width:100%;" title="Error SQL: ORA-65096: nombre de usuario o rol común no válido" alt="Error SQL: ORA-65096: nombre de usuario o rol común no válido"></p>
+<h3>Texto del mensaje de error</h3>
+<pre class="prettyprint lang-sql prettyprinted" style=""><span class="com">/*Error que empieza en la línea: 10 del comando -
+CREATE USER colegio
+IDENTIFIED BY P4$$w0rd
+DEFAULT TABLESPACE COLEGIO
+TEMPORARY TABLESPACE TEMP
+QUOTA 20M on COLEGIO
+Error en la línea de comandos : 10 Columna : 13
+Informe de error -
+Error SQL: ORA-65096: nombre de usuario o rol común no válido
+65096. 00000 -  "invalid common user or role name"
+*Cause:    An attempt was made to create a common user or role with a name
+           that was not valid for common users or roles.  In addition to
+           the usual rules for user and role names, common user and role
+           names must start with C## or c## and consist only of ASCII
+           characters.
+*Action:   Specify a valid common user or role name."*/</span></pre><h2>Solución:</h2>
+<p>Ejecutar el siguiente script:</p>
+<pre class="prettyprint lang-sql prettyprinted" style=""><span class="kwd">alter</span><span class="pln"> session </span><span class="kwd">set</span><span class="pln"> </span><span class="str">"_ORACLE_SCRIPT"</span><span class="pun">=</span><span class="pln">true</span><span class="pun">;</span></pre></div></div></div>  </div>
+  
+  <div class="clearfix">
+          <nav class="links node-links clearfix"><ul class="links inline"><li class="comment-add first active"><a href="https://jsequeiros.com/error-sql-ora-65096-nombre-de-usuario-o-rol-comun-no-valido#comment-form" title="Comparta sus pensamientos y sus opciones sobre este envío." class="active">Añadir nuevo comentario</a></li><li class="statistics_counter last"><span>32557 lecturas</span></li></ul></nav>
+    
+    <div id="comments" class="comment-wrapper">
+          <h2 class="title">Comentarios</h2>
+      
+  <a id="comment-5454"></a>
+<article class="comment comment-by-anonymous clearfix">
+  <header>
+              <h3><a href="https://jsequeiros.com/comment/5454#comment-5454" class="permalink" rel="bookmark">Muchas gracia gran</a></h3>
+                      <em class="unpublished"></em>
+      </header>
+
+  
+  <footer class="comment-submitted">
+   Enviado por <span class="username">Andrés  (no verificado)</span> el <time datetime="2022-03-31T15:12:00-05:00">Jue, 31/03/2022 - 15:12</time>  </footer>
+
+  <div>
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Muchas gracia gran desarrollador</p>
+</div></div></div>  </div>
+
+  
+      <nav class="links comment-links clearfix"><ul class="links inline"><li class="comment-reply first last"><a href="https://jsequeiros.com/comment/reply/403/5454">responder</a></li></ul></nav>
+  
+</article>
+<a id="comment-5425"></a>
+<article class="comment comment-by-anonymous clearfix">
+  <header>
+              <h3><a href="https://jsequeiros.com/comment/5425#comment-5425" class="permalink" rel="bookmark">Me funciono, muchas gracias</a></h3>
+                      <em class="unpublished"></em>
+      </header>
+
+  
+  <footer class="comment-submitted">
+   Enviado por <span class="username">Anónimo (no verificado)</span> el <time datetime="2021-11-11T15:46:36-05:00">Jue, 11/11/2021 - 15:46</time>  </footer>
+
+  <div>
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Me funciono, muchas gracias de verdad 
+</p></div></div></div>  </div>
+
+  
+      <nav class="links comment-links clearfix"><ul class="links inline"><li class="comment-reply first last"><a href="https://jsequeiros.com/comment/reply/403/5425">responder</a></li></ul></nav>
+  
+</article>
+<a id="comment-5412"></a>
+<article class="comment comment-by-anonymous clearfix">
+  <header>
+              <h3><a href="https://jsequeiros.com/comment/5412#comment-5412" class="permalink" rel="bookmark">Que grande, gracias !</a></h3>
+                      <em class="unpublished"></em>
+      </header>
+
+  
+  <footer class="comment-submitted">
+   Enviado por <span class="username">towerHome (no verificado)</span> el <time datetime="2021-10-06T06:58:36-05:00">Mié, 06/10/2021 - 06:58</time>  </footer>
+
+  <div>
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Que grande, gracias !</p>
+</div></div></div>  </div>
+
+  
+      <nav class="links comment-links clearfix"><ul class="links inline"><li class="comment-reply first last"><a href="https://jsequeiros.com/comment/reply/403/5412">responder</a></li></ul></nav>
+  
+</article>
+<a id="comment-5369"></a>
+<article class="comment comment-by-anonymous clearfix">
+  <header>
+              <h3><a href="https://jsequeiros.com/comment/5369#comment-5369" class="permalink" rel="bookmark">Gracias me soluciono el</a></h3>
+                      <em class="unpublished"></em>
+      </header>
+
+  
+  <footer class="comment-submitted">
+   Enviado por <span class="username">AldoAli (no verificado)</span> el <time datetime="2021-05-18T21:44:33-05:00">Mar, 18/05/2021 - 21:44</time>  </footer>
+
+  <div>
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Gracias me soluciono el problema!</p>
+</div></div></div>  </div>
+
+  
+      <nav class="links comment-links clearfix"><ul class="links inline"><li class="comment-reply first last"><a href="https://jsequeiros.com/comment/reply/403/5369">responder</a></li></ul></nav>
+  
+</article>
+<a id="comment-5359"></a>
+<article class="comment comment-by-anonymous clearfix">
+  <header>
+              <h3><a href="https://jsequeiros.com/comment/5359#comment-5359" class="permalink" rel="bookmark">Estupendo, ¿de dónde sacaste</a></h3>
+                      <em class="unpublished"></em>
+      </header>
+
+  
+  <footer class="comment-submitted">
+   Enviado por <span class="username">Manolo22 (no verificado)</span> el <time datetime="2021-04-28T02:13:35-05:00">Mié, 28/04/2021 - 02:13</time>  </footer>
+
+  <div>
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Estupendo, ¿de dónde sacaste ese conocimiento?</p>
+</div></div></div>  </div>
+
+  
+      <nav class="links comment-links clearfix"><ul class="links inline"><li class="comment-reply first last"><a href="https://jsequeiros.com/comment/reply/403/5359">responder</a></li></ul></nav>
+  
+</article>
+<a id="comment-5356"></a>
+<article class="comment comment-by-anonymous clearfix">
+  <header>
+              <h3><a href="https://jsequeiros.com/comment/5356#comment-5356" class="permalink" rel="bookmark">Gracias genial, gran aporte</a></h3>
+                      <em class="unpublished"></em>
+      </header>
+
+  
+  <footer class="comment-submitted">
+   Enviado por <span class="username">william correa (no verificado)</span> el <time datetime="2021-04-20T16:04:10-05:00">Mar, 20/04/2021 - 16:04</time>  </footer>
+
+  <div>
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Gracias genial, gran aporte amigo!!</p>
+</div></div></div>  </div>
+
+  
+      <nav class="links comment-links clearfix"><ul class="links inline"><li class="comment-reply first last"><a href="https://jsequeiros.com/comment/reply/403/5356">responder</a></li></ul></nav>
+  
+</article>
+<a id="comment-5352"></a>
+<article class="comment comment-by-anonymous clearfix">
+  <header>
+              <h3><a href="https://jsequeiros.com/comment/5352#comment-5352" class="permalink" rel="bookmark">Genial, gracias</a></h3>
+                      <em class="unpublished"></em>
+      </header>
+
+  
+  <footer class="comment-submitted">
+   Enviado por <span class="username">Anónimo (no verificado)</span> el <time datetime="2021-04-10T14:58:13-05:00">Sáb, 10/04/2021 - 14:58</time>  </footer>
+
+  <div>
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Genial, gracias</p>
+</div></div></div>  </div>
+
+  
+      <nav class="links comment-links clearfix"><ul class="links inline"><li class="comment-reply first last"><a href="https://jsequeiros.com/comment/reply/403/5352">responder</a></li></ul></nav>
+  
+</article>
+<a id="comment-5320"></a>
+<article class="comment comment-by-anonymous clearfix">
+  <header>
+              <h3><a href="https://jsequeiros.com/comment/5320#comment-5320" class="permalink" rel="bookmark">Te amo, gracias</a></h3>
+                      <em class="unpublished"></em>
+      </header>
+
+  
+  <footer class="comment-submitted">
+   Enviado por <span class="username">Juan Jose Marti... (no verificado)</span> el <time datetime="2021-02-01T02:14:22-05:00">Lun, 01/02/2021 - 02:14</time>  </footer>
+
+  <div>
+    <div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Te amo, gracias</p>
+</div></div></div>  </div>
+
+  
+      <nav class="links comment-links clearfix"><ul class="links inline"><li class="comment-reply first last"><a href="https://jsequeiros.com/comment/reply/403/5320">responder</a></li></ul></nav>
+  
+</article>
+
+      <h2 class="title comment-form">Añadir nuevo comentario</h2>
+    <form class="comment-form user-info-from-cookie user-info-from-cookie-processed" action="https://jsequeiros.com/comment/reply/403" method="post" id="comment-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-name">
+  <label for="edit-name">Su nombre </label>
+ <input type="text" id="edit-name" name="name" value="" size="30" maxlength="60" class="form-text">
+</div>
+<div class="form-item form-type-textfield form-item-mail">
+  <label for="edit-mail">Correo electrónico </label>
+ <input type="text" id="edit-mail" name="mail" value="" size="30" maxlength="64" class="form-text">
+<div class="description">El contenido de este campo se mantiene privado y no se mostrará públicamente.</div>
+</div>
+<div class="form-item form-type-textfield form-item-homepage">
+  <label for="edit-homepage">Página principal </label>
+ <input type="text" id="edit-homepage" name="homepage" value="" size="30" maxlength="255" class="form-text">
+</div>
+<div class="field-type-text-long field-name-comment-body field-widget-text-textarea form-wrapper" id="edit-comment-body"><div id="comment-body-add-more-wrapper"><div class="text-format-wrapper"><div class="form-item form-type-textarea form-item-comment-body-und-0-value">
+  <label for="edit-comment-body-und-0-value">Comentario <span class="form-required" title="Este campo es obligatorio.">*</span></label>
+ <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea"><textarea class="text-full form-textarea required" id="edit-comment-body-und-0-value" name="comment_body[und][0][value]" cols="60" rows="5"></textarea><div class="grippie"></div></div>
+</div>
+<fieldset class="filter-wrapper form-wrapper" id="edit-comment-body-und-0-format"><div class="fieldset-wrapper"><div class="filter-help form-wrapper" id="edit-comment-body-und-0-format-help"><p><a href="https://jsequeiros.com/filter/tips" target="_blank">Más información sobre los formatos de texto</a></p></div><div class="form-item form-type-select form-item-comment-body-und-0-format">
+  <label for="edit-comment-body-und-0-format--2">Formato de texto </label>
+ <select class="filter-list form-select" id="edit-comment-body-und-0-format--2" name="comment_body[und][0][format]"><option value="2" selected="selected">Full HTML</option><option value="1">Filtered HTML</option><option value="5">Plain text</option></select>
+</div>
+<div class="filter-guidelines form-wrapper filter-guidelines-processed" id="edit-comment-body-und-0-format-guidelines"><div class="filter-guidelines-item filter-guidelines-2" style="display: block;"><h3 style="display: none;">Full HTML</h3><ul class="tips"><li>Saltos automáticos de líneas y de párrafos.</li><li>Las direcciones de las páginas web y las de correo se convierten en enlaces automáticamente.</li></ul></div><div class="filter-guidelines-item filter-guidelines-1" style="display: none;"><h3 style="display: none;">Filtered HTML</h3><ul class="tips"><li>Las direcciones de las páginas web y las de correo se convierten en enlaces automáticamente.</li><li>Saltos automáticos de líneas y de párrafos.</li><li>Etiquetas HTML permitidas: &lt;a&gt; &lt;em&gt; &lt;strong&gt; &lt;cite&gt; &lt;code&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</li></ul></div><div class="filter-guidelines-item filter-guidelines-5" style="display: none;"><h3 style="display: none;">Plain text</h3><ul class="tips"><li>No se permiten etiquetas HTML.</li><li>Las direcciones de las páginas web y las de correo se convierten en enlaces automáticamente.</li><li>Saltos automáticos de líneas y de párrafos.</li></ul></div></div></div></fieldset>
+</div>
+</div></div><input type="hidden" name="form_build_id" value="form-nqro9-TYC8wwcQTYoNX0OyGQKxbtjoQPGnxT0UKiadI">
+<input type="hidden" name="form_id" value="comment_node_story_form">
+<div class="captcha"><input type="hidden" name="captcha_sid" value="9695986">
+<input type="hidden" name="captcha_token" value="c0f83b06ab0e49be1134e4fe9b2e9b87">
+<img src="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/image_captcha" width="336" height="96" alt="CAPTCHA de imagen" title="CAPTCHA de imagen"><div class="form-item form-type-textfield form-item-captcha-response">
+  <label for="edit-captcha-response">¿Cuál es el código de la imagen? <span class="form-required" title="Este campo es obligatorio.">*</span></label>
+ <input type="text" id="edit-captcha-response" name="captcha_response" value="" size="15" maxlength="128" class="form-text required" autocomplete="off">
+<div class="description">Validación que diferencia mayúsculas de mínúsculas</div>
+</div>
+</div><div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Guardar" class="form-submit"><input type="submit" id="edit-preview" name="op" value="Previsualizar" class="form-submit"></div></div></form>  </div>
+  </div>
+</article>    </div>
+  </div>
+</div>      </div>
+</div><aside class="grid-4 region region-sidebar-second" id="region-sidebar-second">
+  <div class="region-inner region-sidebar-second-inner">
+    <div class="block block-adsense-oldcode block-2 block-adsense-oldcode-2 odd block-without-title" id="block-adsense-oldcode-2">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div style="text-align:center"><div class="adsense" style="width:300px;height:250px;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-6604820468265256";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "text_image";
+google_color_border = "005A8C";
+google_color_bg = "FFFFFF";
+google_color_link = "005A8C";
+google_color_text = "000000";
+google_color_url = "008000";
+google_ui_features = "rc:0";
+//--></script>
+<script type="text/javascript" src="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/f.txt">
+</script>
+</div></div>    </div>
+  </div>
+</div><div class="block block-adsense-oldcode block-4 block-adsense-oldcode-4 even block-without-title" id="block-adsense-oldcode-4">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div style="text-align:center"><div class="adsense" style="width:200px;height:90px;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-6604820468265256";
+google_ad_width = 200;
+google_ad_height = 90;
+google_ad_format = "200x90_0ads_al_s";
+google_color_border = "0174BB";
+google_color_bg = "0174BB";
+google_color_link = "FFFFFF";
+google_color_text = "FFFFFF";
+google_color_url = "008000";
+google_ui_features = "rc:0";
+//--></script>
+<script type="text/javascript" src="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/f.txt">
+</script>
+</div></div>    </div>
+  </div>
+</div><div class="block block-adsense-oldcode block-3 block-adsense-oldcode-3 odd block-without-title" id="block-adsense-oldcode-3">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div style="text-align:center"><div class="adsense" style="width:200px;height:90px;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-6604820468265256";
+google_ad_width = 200;
+google_ad_height = 90;
+google_ad_format = "200x90_0ads_al_s";
+google_color_border = "005A8C";
+google_color_bg = "D5EFFF";
+google_color_link = "005A8C";
+google_color_text = "000000";
+google_color_url = "008000";
+google_ui_features = "rc:0";
+//--></script>
+<script type="text/javascript" src="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/f.txt">
+</script>
+</div></div>    </div>
+  </div>
+</div><section class="block block-menu block-menu-cursos-cecinfo block-menu-menu-cursos-cecinfo even" id="block-menu-menu-cursos-cecinfo">
+  <div class="block-inner clearfix">
+              <h2 class="block-title">Cursos cecinfo</h2>
+            
+    <div class="content clearfix">
+      <ul class="menu"><li class="first expanded"><a href="https://jsequeiros.com/ejercicios-word/word.html" title="Manuales y Ejercicios de Word 2007, Word 2010.">Word 2007</a><ul class="menu"><li class="first last leaf"><a href="https://jsequeiros.com/ejercicios-word/ejercicios-word.html" title="Ejercicios Word">Ejercicios Word</a></li>
+</ul></li>
+<li class="expanded"><a href="https://jsequeiros.com/ejercicios-excel/excel-2003-2007-2010-2013.html" title="Manuales y Ejercicios de Excel 2007 2010.">Excel 2003, 2007, 2010, 2013</a><ul class="menu"><li class="first leaf"><a href="https://jsequeiros.com/ejercicios-excel/ejercicios-excel-2007-2010.html" title="Ejercicios Excel 2007, 2010">Ejercicios Excel, 2007, 2010</a></li>
+<li class="last leaf"><a href="https://jsequeiros.com/ejercicios-excel-word-power-point/manual-excel-2007.html" title="Manual Excel 2007">Manual Excel 2007</a></li>
+</ul></li>
+<li class="expanded"><a href="https://jsequeiros.com/ejercicios-power-point/power-point-2007.html" title="Manuales y ejercicios de Power Point 2007, Power Point 2010.">Power Point 2007</a><ul class="menu"><li class="first leaf"><a href="https://jsequeiros.com/ejercicios-power-point/ejercicios-power-point.html" title="Ejercicios Power Point">Ejercicios Power Point</a></li>
+<li class="last leaf"><a href="https://jsequeiros.com/ejercicios-excel-word-power-point/manual-power-point-2007.html" title="Manual Power Point 2007">Manual Power Point 2007</a></li>
+</ul></li>
+<li class="expanded"><a href="https://jsequeiros.com/windows-xp/windows-xp.html" title="Manuales y Ejercicios de Windows XP">Windows XP</a><ul class="menu"><li class="first leaf"><a href="https://jsequeiros.com/ejercicios-excel-word-power-point/ejercicios-windows-xp.html" title="Ejercicios Windows XP">Ejercicios Windows XP</a></li>
+<li class="last leaf"><a href="https://jsequeiros.com/ejercicios-excel-word-power-point/manual-windows-xp.html" title="Manual Windows XP">Manual Windows XP</a></li>
+</ul></li>
+<li class="leaf"><a href="https://jsequeiros.com/ejercicios-para-aprender-access-2007-2010-2013.html" title="Ejercicios para aprender excel">Ejercicios Acces</a></li>
+<li class="leaf"><a href="https://jsequeiros.com/ejercicios-excel/soluciones-ejercicios-excel.html" title="soluciones a los ejercicios de Excel 2007 2010.">Soluciones Excel</a></li>
+<li class="last leaf"><a href="https://jsequeiros.com/ejercicios-word/soluciones-de-los-ejercicios-word.html" title="soluciones de Word con las versiones 2007, 2010, 2013, 2016 y 2016.">Soluciones Word</a></li>
+</ul>    </div>
+  </div>
+</section><div class="block block-adsense-oldcode block-1 block-adsense-oldcode-1 odd block-without-title" id="block-adsense-oldcode-1">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div style="text-align:center"><div class="adsense" style="width:300px;height:600px;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-6604820468265256";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "text_image";
+google_color_border = "005A8C";
+google_color_bg = "FFFFFF";
+google_color_link = "005A8C";
+google_color_text = "000000";
+google_color_url = "008000";
+google_ui_features = "rc:0";
+//--></script>
+<script type="text/javascript" src="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/f.txt">
+</script>
+</div></div>    </div>
+  </div>
+</div><section class="block block-views block-vista-contenido-popular-block-1 block-views-vista-contenido-popular-block-1 even" id="block-views-vista-contenido-popular-block-1">
+  <div class="block-inner clearfix">
+              <h2 class="block-title">Más leídas hoy</h2>
+            
+    <div class="content clearfix">
+      <div class="view view-vista-contenido-popular view-id-vista_contenido_popular view-display-id-block_1 view-dom-id-efd891dd95240659c165ef324fbbba01">
+        
+  
+  
+      <div class="view-content">
+      <div class="item-list">    <ul>          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <span class="views-field views-field-title">        <span class="field-content"><a href="https://jsequeiros.com/ejercicios-word/ejercicios-word.html">Ejercicios para aprender Word 2007, 2010, 2013, 2016</a></span>  </span>  
+  <span class="views-field views-field-daycount">        <span class="field-content"> (45)</span>  </span></li>
+          <li class="views-row views-row-2 views-row-even">  
+  <span class="views-field views-field-title">        <span class="field-content"><a href="https://jsequeiros.com/ejercicios-excel/ejercicios-excel-2007-2010.html">Ejercicios para aprender excel 2007, 2010, 2013 y 2016</a></span>  </span>  
+  <span class="views-field views-field-daycount">        <span class="field-content"> (33)</span>  </span></li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <span class="views-field views-field-title">        <span class="field-content"><a href="https://jsequeiros.com/ejercicios-excel/soluciones-ejercicios-excel.html">Soluciones de los ejercicios de Excel</a></span>  </span>  
+  <span class="views-field views-field-daycount">        <span class="field-content"> (16)</span>  </span></li>
+          <li class="views-row views-row-4 views-row-even">  
+  <span class="views-field views-field-title">        <span class="field-content"><a href="https://jsequeiros.com/ejercicios-power-point/ejercicios-power-point.html">Ejercicios Power Point</a></span>  </span>  
+  <span class="views-field views-field-daycount">        <span class="field-content"> (11)</span>  </span></li>
+          <li class="views-row views-row-5 views-row-odd">  
+  <span class="views-field views-field-title">        <span class="field-content"><a href="https://jsequeiros.com/nombres-de-los-dedos-de-una-mano.html">Nombres de los dedos de una mano</a></span>  </span>  
+  <span class="views-field views-field-daycount">        <span class="field-content"> (9)</span>  </span></li>
+          <li class="views-row views-row-6 views-row-even">  
+  <span class="views-field views-field-title">        <span class="field-content"><a href="https://jsequeiros.com/obtener-listado-triggers-base-datos-sql-server">Obtener el listado de triggers en una base de datos SQL Server</a></span>  </span>  
+  <span class="views-field views-field-daycount">        <span class="field-content"> (8)</span>  </span></li>
+          <li class="views-row views-row-7 views-row-odd">  
+  <span class="views-field views-field-title">        <span class="field-content"><a href="https://jsequeiros.com/error-sql-ora-65096-nombre-de-usuario-o-rol-comun-no-valido" class="active">Error SQL: ORA-65096: nombre de usuario o rol común no válido</a></span>  </span>  
+  <span class="views-field views-field-daycount">        <span class="field-content"> (8)</span>  </span></li>
+          <li class="views-row views-row-8 views-row-even">  
+  <span class="views-field views-field-title">        <span class="field-content"><a href="https://jsequeiros.com/mecanografia/programa-mecanet-para-aprender-digitar-con-los-10-dedos.html">Con Mecanet aprenda a escribir con los 10 dedos</a></span>  </span>  
+  <span class="views-field views-field-daycount">        <span class="field-content"> (7)</span>  </span></li>
+          <li class="views-row views-row-9 views-row-odd">  
+  <span class="views-field views-field-title">        <span class="field-content"><a href="https://jsequeiros.com/resultados-del-proceso-de-asimilacion-pnp-2016.html"> Resultados del Examen de Asimilación PNP 2016 ESAN</a></span>  </span>  
+  <span class="views-field views-field-daycount">        <span class="field-content"> (6)</span>  </span></li>
+          <li class="views-row views-row-10 views-row-even views-row-last">  
+  <span class="views-field views-field-title">        <span class="field-content"><a href="https://jsequeiros.com/manuales-y-ejercicios-de-excel-word-power-point-y-windows-xp.html">Manuales y Ejercicios de Excel, Word, Power Point y Windows XP</a></span>  </span>  
+  <span class="views-field views-field-daycount">        <span class="field-content"> (5)</span>  </span></li>
+      </ul></div>    </div>
+  
+  
+  
+      
+<div class="more-link">
+  <a href="https://jsequeiros.com/popular/today">
+    ver más  </a>
+</div>
+  
+  
+  
+</div>    </div>
+  </div>
+</section><section class="block block-block block-2 block-block-2 odd" id="block-block-2">
+  <div class="block-inner clearfix">
+              <h2 class="block-title">Sitios  web de Interés</h2>
+            
+    <div class="content clearfix">
+      <ul style="margin-left:10px">
+<li class="leaf"><a href="http://ajedrezutea.com/" target="_blank">Problemas de Ajedrez</a></li>
+<li class="leaf"> <a href="http://jsequeiros.blogspot.com/" target="_blank">Blog</a></li>
+</ul>
+    </div>
+  </div>
+</section><section class="block block-user block-login block-user-login even" id="block-user-login">
+  <div class="block-inner clearfix">
+              <h2 class="block-title">Inicio de sesión</h2>
+            
+    <div class="content clearfix">
+      <form action="https://jsequeiros.com/error-sql-ora-65096-nombre-de-usuario-o-rol-comun-no-valido?destination=node/403" method="post" id="user-login-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-name">
+  <label for="edit-name--2">Nombre de usuario <span class="form-required" title="Este campo es obligatorio.">*</span></label>
+ <input type="text" id="edit-name--2" name="name" value="" size="15" maxlength="60" class="form-text required">
+</div>
+<div class="form-item form-type-password form-item-pass">
+  <label for="edit-pass">Contraseña <span class="form-required" title="Este campo es obligatorio.">*</span></label>
+ <input type="password" id="edit-pass" name="pass" size="15" maxlength="128" class="form-text required">
+</div>
+<div class="item-list"><ul><li class="first"><a href="https://jsequeiros.com/user/register" title="Crear una nueva cuenta de usuario.">Crear nueva cuenta</a></li><li class="last"><a href="https://jsequeiros.com/user/password" title="Solicita una contraseña nueva por correo electrónico.">Solicitar una nueva contraseña</a></li></ul></div><input type="hidden" name="form_build_id" value="form-b_GwFfpaMaALws4Cf_bJ1owyrB24-EMgxQCaQx0HDWU">
+<input type="hidden" name="form_id" value="user_login_block">
+<div class="form-actions form-wrapper" id="edit-actions--2"><input type="submit" id="edit-submit--2" name="op" value="Iniciar sesión" class="form-submit"></div></div></form>    </div>
+  </div>
+</section><section class="block block-views block-comments-recent-block block-views-comments-recent-block odd" id="block-views-comments-recent-block">
+  <div class="block-inner clearfix">
+              <h2 class="block-title">Comentarios recientes</h2>
+            
+    <div class="content clearfix">
+      <div class="view view-comments-recent view-id-comments_recent view-display-id-block view-dom-id-b71311134c84d0f77e62fed28d7b71c6">
+        
+  
+  
+      <div class="view-content">
+      <div class="item-list">    <ul>          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field views-field-subject">        <span class="field-content"><a href="https://jsequeiros.com/comment/5464#comment-5464">Los ejercicios son muy buenos</a></span>  </div>  
+  <div class="views-field views-field-timestamp">        <span class="field-content">hace <em class="placeholder">2 días 21 horas</em></span>  </div></li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field views-field-subject">        <span class="field-content"><a href="https://jsequeiros.com/comment/5460#comment-5460">muy buen material. Durante</a></span>  </div>  
+  <div class="views-field views-field-timestamp">        <span class="field-content">hace <em class="placeholder">1 mes 1 semana</em></span>  </div></li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field views-field-subject">        <span class="field-content"><a href="https://jsequeiros.com/comment/5456#comment-5456">Te agradezco mucho el</a></span>  </div>  
+  <div class="views-field views-field-timestamp">        <span class="field-content">hace <em class="placeholder">1 mes 3 semanas</em></span>  </div></li>
+          <li class="views-row views-row-4 views-row-even">  
+  <div class="views-field views-field-subject">        <span class="field-content"><a href="https://jsequeiros.com/comment/5454#comment-5454">Muchas gracia gran</a></span>  </div>  
+  <div class="views-field views-field-timestamp">        <span class="field-content">hace <em class="placeholder">1 mes 3 semanas</em></span>  </div></li>
+          <li class="views-row views-row-5 views-row-odd">  
+  <div class="views-field views-field-subject">        <span class="field-content"><a href="https://jsequeiros.com/comment/5453#comment-5453">MI profe de informatica copia</a></span>  </div>  
+  <div class="views-field views-field-timestamp">        <span class="field-content">hace <em class="placeholder">1 mes 3 semanas</em></span>  </div></li>
+          <li class="views-row views-row-6 views-row-even">  
+  <div class="views-field views-field-subject">        <span class="field-content"><a href="https://jsequeiros.com/comment/5452#comment-5452">Muchas gracias. Muy útil esta</a></span>  </div>  
+  <div class="views-field views-field-timestamp">        <span class="field-content">hace <em class="placeholder">2 meses 1 día</em></span>  </div></li>
+          <li class="views-row views-row-7 views-row-odd">  
+  <div class="views-field views-field-subject">        <span class="field-content"><a href="https://jsequeiros.com/comment/5450#comment-5450">Muy buen material. Gracias</a></span>  </div>  
+  <div class="views-field views-field-timestamp">        <span class="field-content">hace <em class="placeholder">2 meses 4 días</em></span>  </div></li>
+          <li class="views-row views-row-8 views-row-even">  
+  <div class="views-field views-field-subject">        <span class="field-content"><a href="https://jsequeiros.com/comment/5448#comment-5448">Ha funcionado, muchas gracias</a></span>  </div>  
+  <div class="views-field views-field-timestamp">        <span class="field-content">hace <em class="placeholder">2 meses 5 días</em></span>  </div></li>
+          <li class="views-row views-row-9 views-row-odd">  
+  <div class="views-field views-field-subject">        <span class="field-content"><a href="https://jsequeiros.com/comment/5447#comment-5447">PROPUESTA: Para la presente</a></span>  </div>  
+  <div class="views-field views-field-timestamp">        <span class="field-content">hace <em class="placeholder">2 meses 1 semana</em></span>  </div></li>
+          <li class="views-row views-row-10 views-row-even views-row-last">  
+  <div class="views-field views-field-subject">        <span class="field-content"><a href="https://jsequeiros.com/comment/5446#comment-5446">Muchas gracias por la ayuda!!</a></span>  </div>  
+  <div class="views-field views-field-timestamp">        <span class="field-content">hace <em class="placeholder">2 meses 1 semana</em></span>  </div></li>
+      </ul></div>    </div>
+  
+  
+  
+      
+<div class="more-link">
+  <a href="https://jsequeiros.com/comments/recent">
+    Ver más  </a>
+</div>
+  
+  
+  
+</div>    </div>
+  </div>
+</section><section class="block block-views block-contenido-reciente-block-1 block-views-contenido-reciente-block-1 even" id="block-views-contenido-reciente-block-1">
+  <div class="block-inner clearfix">
+              <h2 class="block-title">Últimos artículos</h2>
+            
+    <div class="content clearfix">
+      <div class="view view-contenido-reciente view-id-contenido_reciente view-display-id-block_1 view-dom-id-d1561bc425b7b26b36dd8b68173a9be6">
+        
+  
+  
+      <div class="view-content">
+      <div class="item-list">    <ul>          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://jsequeiros.com/la-ventana-de-instalacion-de-SSMS-no-aparece">La ventana de instalación de SSMS no aparece</a></span>  </div>  
+  <div class="views-field views-field-created">        <span class="field-content">hace <em class="placeholder">1 mes 2 semanas</em></span>  </div></li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://jsequeiros.com/agregar-base-de-datossql-server-con-encriptacion-tde-a-un-grupo-de-disponibiidad-alwayson">Agregar una base de datos en SQL Server con encriptación TDE a un grupo de disponibiidad AlwaysOn.</a></span>  </div>  
+  <div class="views-field views-field-created">        <span class="field-content">hace <em class="placeholder">3 meses 4 semanas</em></span>  </div></li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://jsequeiros.com/cambiar-nombre-de-archivos-fisicos-de-una-de-base-de-datos-sql-server">Cambiar el nombre de los archivos físicos de una de bases de datos SQL Server</a></span>  </div>  
+  <div class="views-field views-field-created">        <span class="field-content">hace <em class="placeholder">4 meses 3 semanas</em></span>  </div></li>
+          <li class="views-row views-row-4 views-row-even">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://jsequeiros.com/solucion-error-7399-7330-7311-sql-server-dblink-oracle">Solución al Error 7399, 7330 y 7311 en SQL Server con servidor vinculado de Oracle</a></span>  </div>  
+  <div class="views-field views-field-created">        <span class="field-content">hace <em class="placeholder">1 año 2 meses</em></span>  </div></li>
+          <li class="views-row views-row-5 views-row-odd views-row-last">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://jsequeiros.com/power-bi-report-server-el-sistema-no-puede-encontrar-el-recurso-especificado-0x800C0005">Solución al error en la instalación de Power BI Report Server: El sistema no puede encontrar el recurso especificado (0x800C0005)</a></span>  </div>  
+  <div class="views-field views-field-created">        <span class="field-content">hace <em class="placeholder">1 año 3 meses</em></span>  </div></li>
+      </ul></div>    </div>
+  
+  
+  
+      
+<div class="more-link">
+  <a href="https://jsequeiros.com/articulos-recientes.html">
+    ver más  </a>
+</div>
+  
+  
+  
+</div>    </div>
+  </div>
+</section><div class="block block-adsense-oldcode block-0 block-adsense-oldcode-0 odd block-without-title" id="block-adsense-oldcode-0">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div style="text-align:center"><div class="adsense" style="width:300px;height:600px;">
+<script type="text/javascript"><!--
+google_ad_client = "pub-6604820468265256";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "text_image";
+google_color_border = "005A8C";
+google_color_bg = "FFFFFF";
+google_color_link = "005A8C";
+google_color_text = "000000";
+google_color_url = "008000";
+google_ui_features = "rc:10";
+//--></script>
+<script type="text/javascript" src="./Error SQL_ ORA-65096_ nombre de usuario o rol común no válido _ Blog de Jesús Sequeiros Arone_files/f.txt">
+</script>
+</div></div>    </div>
+  </div>
+</div>  </div>
+</aside>  </div>
+</div></section>    
+  
+      <footer id="section-footer" class="section section-footer">
+  <div id="zone-footer-wrapper" class="zone-wrapper zone-footer-wrapper clearfix">  
+  <div id="zone-footer" class="zone zone-footer clearfix container-12">
+    <div class="grid-12 region region-footer-first" id="region-footer-first">
+  <div class="region-inner region-footer-first-inner">
+    <div class="block block-block block-17 block-block-17 odd block-without-title" id="block-block-17">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div align="center" style="color:#ffffff"> Sitio web desarrollado por <a href="http://jsequeiros.com/jesus-sequeiros-arone.html"> JSequeiros</a> 2009-2019.  <br><br>
+Redes Sociales: <a target="_blank" href="https://www.facebook.com/Cursos.JSequeiros/">Facebook</a>, <a target="_blank" href="https://twitter.com/JSequeiros">Twitter</a>, <a target="_blank" href="https://plus.google.com/114745377709771452973/">Google Plus</a>
+ </div>
+    </div>
+  </div>
+</div>  </div>
+</div><div class="grid-12 region region-footer-second" id="region-footer-second">
+  <div class="region-inner region-footer-second-inner">
+    <div class="block block-block block-5 block-block-5 odd block-without-title" id="block-block-5">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <script>
+<!--//--><![CDATA[// ><!--
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45239210-1', 'jsequeiros.com');
+  ga('send', 'pageview');
+
+
+//--><!]]>
+</script>    </div>
+  </div>
+</div>  </div>
+</div>  </div>
+</div></footer>  </div>  
+</body></html>

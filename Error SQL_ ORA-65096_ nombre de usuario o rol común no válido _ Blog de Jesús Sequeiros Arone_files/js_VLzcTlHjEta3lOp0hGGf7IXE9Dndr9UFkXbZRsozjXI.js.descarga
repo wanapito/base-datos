@@ -1,0 +1,176 @@
+var IN_GLOBAL_SCOPE=true;window.PR_SHOULD_USE_CONTINUATION=true;var prettyPrintOne;var prettyPrint;(function(){var P=window;var i=["break,continue,do,else,for,if,return,while"];var u=[i,"auto,case,char,const,default,double,enum,extern,float,goto,inline,int,long,register,short,signed,sizeof,static,struct,switch,typedef,union,unsigned,void,volatile"];var p=[u,"catch,class,delete,false,import,new,operator,private,protected,public,this,throw,true,try,typeof"];var l=[p,"alignof,align_union,asm,axiom,bool,concept,concept_map,const_cast,constexpr,decltype,delegate,dynamic_cast,explicit,export,friend,generic,late_check,mutable,namespace,nullptr,property,reinterpret_cast,static_assert,static_cast,template,typeid,typename,using,virtual,where"];var y=[p,"abstract,assert,boolean,byte,extends,final,finally,implements,import,instanceof,interface,null,native,package,strictfp,super,synchronized,throws,transient"];var U=[y,"as,base,by,checked,decimal,delegate,descending,dynamic,event,fixed,foreach,from,group,implicit,in,internal,into,is,let,lock,object,out,override,orderby,params,partial,readonly,ref,sbyte,sealed,stackalloc,string,select,uint,ulong,unchecked,unsafe,ushort,var,virtual,where"];var r="all,and,by,catch,class,else,extends,false,finally,for,if,in,is,isnt,loop,new,no,not,null,of,off,on,or,return,super,then,throw,true,try,unless,until,when,while,yes";var x=[p,"debugger,eval,export,function,get,null,set,undefined,var,with,Infinity,NaN"];var s="caller,delete,die,do,dump,elsif,eval,exit,foreach,for,goto,if,import,last,local,my,next,no,our,print,package,redo,require,sub,undef,unless,until,use,wantarray,while,BEGIN,END";var K=[i,"and,as,assert,class,def,del,elif,except,exec,finally,from,global,import,in,is,lambda,nonlocal,not,or,pass,print,raise,try,with,yield,False,True,None"];var g=[i,"alias,and,begin,case,class,def,defined,elsif,end,ensure,false,in,module,next,nil,not,or,redo,rescue,retry,self,super,then,true,undef,unless,until,when,yield,BEGIN,END"];var z=[i,"as,assert,const,copy,drop,enum,extern,fail,false,fn,impl,let,log,loop,match,mod,move,mut,priv,pub,pure,ref,self,static,struct,true,trait,type,unsafe,use"];var J=[i,"case,done,elif,esac,eval,fi,function,in,local,set,then,until"];var C=[l,U,x,s,K,g,J];var e=/^(DIR|FILE|vector|(de|priority_)?queue|list|stack|(const_)?iterator|(multi)?(set|map)|bitset|u?(int|float)\d*)\b/;var E="str";var B="kwd";var j="com";var R="typ";var I="lit";var N="pun";var H="pln";var m="tag";var G="dec";var L="src";var S="atn";var n="atv";var Q="nocode";var O="(?:^^\\.?|[+-]|[!=]=?=?|\\#|%=?|&&?=?|\\(|\\*=?|[+\\-]=|->|\\/=?|::?|<<?=?|>>?>?=?|,|;|\\?|@|\\[|~|{|\\^\\^?=?|\\|\\|?=?|break|case|continue|delete|do|else|finally|instanceof|return|throw|try|typeof)\\s*";function k(ac){var ag=0;var V=false;var af=false;for(var Y=0,X=ac.length;Y<X;++Y){var ah=ac[Y];if(ah.ignoreCase){af=true}else{if(/[a-z]/i.test(ah.source.replace(/\\u[0-9a-f]{4}|\\x[0-9a-f]{2}|\\[^ux]/gi,""))){V=true;af=false;break}}}var ab={b:8,t:9,n:10,v:11,f:12,r:13};function ae(ak){var aj=ak.charCodeAt(0);if(aj!==92){return aj}var ai=ak.charAt(1);aj=ab[ai];if(aj){return aj}else{if("0"<=ai&&ai<="7"){return parseInt(ak.substring(1),8)}else{if(ai==="u"||ai==="x"){return parseInt(ak.substring(2),16)}else{return ak.charCodeAt(1)}}}}function W(ai){if(ai<32){return(ai<16?"\\x0":"\\x")+ai.toString(16)}var aj=String.fromCharCode(ai);return(aj==="\\"||aj==="-"||aj==="]"||aj==="^")?"\\"+aj:aj}function aa(ao){var at=ao.substring(1,ao.length-1).match(new RegExp("\\\\u[0-9A-Fa-f]{4}|\\\\x[0-9A-Fa-f]{2}|\\\\[0-3][0-7]{0,2}|\\\\[0-7]{1,2}|\\\\[\\s\\S]|-|[^-\\\\]","g"));var ai=[];var aq=at[0]==="^";var ap=["["];if(aq){ap.push("^")}for(var au=aq?1:0,am=at.length;au<am;++au){var ak=at[au];if(/\\[bdsw]/i.test(ak)){ap.push(ak)}else{var aj=ae(ak);var an;if(au+2<am&&"-"===at[au+1]){an=ae(at[au+2]);au+=2}else{an=aj}ai.push([aj,an]);if(!(an<65||aj>122)){if(!(an<65||aj>90)){ai.push([Math.max(65,aj)|32,Math.min(an,90)|32])}if(!(an<97||aj>122)){ai.push([Math.max(97,aj)&~32,Math.min(an,122)&~32])}}}}ai.sort(function(ax,aw){return(ax[0]-aw[0])||(aw[1]-ax[1])});var al=[];var ar=[];for(var au=0;au<ai.length;++au){var av=ai[au];if(av[0]<=ar[1]+1){ar[1]=Math.max(ar[1],av[1])}else{al.push(ar=av)}}for(var au=0;au<al.length;++au){var av=al[au];ap.push(W(av[0]));if(av[1]>av[0]){if(av[1]+1>av[0]){ap.push("-")}ap.push(W(av[1]))}}ap.push("]");return ap.join("")}function Z(ao){var am=ao.source.match(new RegExp("(?:\\[(?:[^\\x5C\\x5D]|\\\\[\\s\\S])*\\]|\\\\u[A-Fa-f0-9]{4}|\\\\x[A-Fa-f0-9]{2}|\\\\[0-9]+|\\\\[^ux0-9]|\\(\\?[:!=]|[\\(\\)\\^]|[^\\x5B\\x5C\\(\\)\\^]+)","g"));var ak=am.length;var aq=[];for(var an=0,ap=0;an<ak;++an){var aj=am[an];if(aj==="("){++ap}else{if("\\"===aj.charAt(0)){var ai=+aj.substring(1);if(ai){if(ai<=ap){aq[ai]=-1}else{am[an]=W(ai)}}}}}for(var an=1;an<aq.length;++an){if(-1===aq[an]){aq[an]=++ag}}for(var an=0,ap=0;an<ak;++an){var aj=am[an];if(aj==="("){++ap;if(!aq[ap]){am[an]="(?:"}}else{if("\\"===aj.charAt(0)){var ai=+aj.substring(1);if(ai&&ai<=ap){am[an]="\\"+aq[ai]}}}}for(var an=0;an<ak;++an){if("^"===am[an]&&"^"!==am[an+1]){am[an]=""}}if(ao.ignoreCase&&V){for(var an=0;an<ak;++an){var aj=am[an];var al=aj.charAt(0);if(aj.length>=2&&al==="["){am[an]=aa(aj)}else{if(al!=="\\"){am[an]=aj.replace(/[a-zA-Z]/g,function(ar){var at=ar.charCodeAt(0);return"["+String.fromCharCode(at&~32,at|32)+"]"})}}}}return am.join("")}var ad=[];for(var Y=0,X=ac.length;Y<X;++Y){var ah=ac[Y];if(ah.global||ah.multiline){throw new Error(""+ah)}ad.push("(?:"+Z(ah)+")")}return new RegExp(ad.join("|"),af?"gi":"g")}function b(ab,Z){var X=/(?:^|\s)nocode(?:\s|$)/;var ac=[];var aa=0;var Y=[];var W=0;function V(ae){var ad=ae.nodeType;if(ad==1){if(X.test(ae.className)){return}for(var ah=ae.firstChild;ah;ah=ah.nextSibling){V(ah)}var ag=ae.nodeName.toLowerCase();if("br"===ag||"li"===ag){ac[W]="\n";Y[W<<1]=aa++;Y[(W++<<1)|1]=ae}}else{if(ad==3||ad==4){var af=ae.nodeValue;if(af.length){if(!Z){af=af.replace(/[ \t\r\n]+/g," ")}else{af=af.replace(/\r\n?/g,"\n")}ac[W]=af;Y[W<<1]=aa;aa+=af.length;Y[(W++<<1)|1]=ae}}}}V(ab);return{sourceCode:ac.join("").replace(/\n$/,""),spans:Y}}function D(V,X,Z,W){if(!X){return}var Y={sourceCode:X,basePos:V};Z(Y);W.push.apply(W,Y.decorations)}var v=/\S/;function o(V){var Y=undefined;for(var X=V.firstChild;X;X=X.nextSibling){var W=X.nodeType;Y=(W===1)?(Y?V:X):(W===3)?(v.test(X.nodeValue)?V:Y):Y}return Y===V?undefined:Y}function f(X,W){var V={};var Y;(function(){var ag=X.concat(W);var ak=[];var aj={};for(var ae=0,ac=ag.length;ae<ac;++ae){var ab=ag[ae];var af=ab[3];if(af){for(var ah=af.length;--ah>=0;){V[af.charAt(ah)]=ab}}var ai=ab[1];var ad=""+ai;if(!aj.hasOwnProperty(ad)){ak.push(ai);aj[ad]=null}}ak.push(/[\0-\uffff]/);Y=k(ak)})();var aa=W.length;var Z=function(ak){var ac=ak.sourceCode,ab=ak.basePos;var ag=[ab,H];var ai=0;var aq=ac.match(Y)||[];var am={};for(var ah=0,au=aq.length;ah<au;++ah){var aj=aq[ah];var at=am[aj];var al=void 0;var ap;if(typeof at==="string"){ap=false}else{var ad=V[aj.charAt(0)];if(ad){al=aj.match(ad[1]);at=ad[0]}else{for(var ar=0;ar<aa;++ar){ad=W[ar];al=aj.match(ad[1]);if(al){at=ad[0];break}}if(!al){at=H}}ap=at.length>=5&&"lang-"===at.substring(0,5);if(ap&&!(al&&typeof al[1]==="string")){ap=false;at=L}if(!ap){am[aj]=at}}var ae=ai;ai+=aj.length;if(!ap){ag.push(ab+ae,at)}else{var ao=al[1];var an=aj.indexOf(ao);var af=an+ao.length;if(al[2]){af=aj.length-al[2].length;an=af-ao.length}var av=at.substring(5);D(ab+ae,aj.substring(0,an),Z,ag);D(ab+ae+an,ao,q(av,ao),ag);D(ab+ae+af,aj.substring(af),Z,ag)}}ak.decorations=ag};return Z}function h(af){var X=[],ab=[];if(af.tripleQuotedStrings){X.push([E,/^(?:\'\'\'(?:[^\'\\]|\\[\s\S]|\'{1,2}(?=[^\']))*(?:\'\'\'|$)|\"\"\"(?:[^\"\\]|\\[\s\S]|\"{1,2}(?=[^\"]))*(?:\"\"\"|$)|\'(?:[^\\\']|\\[\s\S])*(?:\'|$)|\"(?:[^\\\"]|\\[\s\S])*(?:\"|$))/,null,"'\""])}else{if(af.multiLineStrings){X.push([E,/^(?:\'(?:[^\\\']|\\[\s\S])*(?:\'|$)|\"(?:[^\\\"]|\\[\s\S])*(?:\"|$)|\`(?:[^\\\`]|\\[\s\S])*(?:\`|$))/,null,"'\"`"])}else{X.push([E,/^(?:\'(?:[^\\\'\r\n]|\\.)*(?:\'|$)|\"(?:[^\\\"\r\n]|\\.)*(?:\"|$))/,null,"\"'"])}}if(af.verbatimStrings){ab.push([E,/^@\"(?:[^\"]|\"\")*(?:\"|$)/,null])}var ad=af.hashComments;if(ad){if(af.cStyleComments){if(ad>1){X.push([j,/^#(?:##(?:[^#]|#(?!##))*(?:###|$)|.*)/,null,"#"])}else{X.push([j,/^#(?:(?:define|e(?:l|nd)if|else|error|ifn?def|include|line|pragma|undef|warning)\b|[^\r\n]*)/,null,"#"])}ab.push([E,/^<(?:(?:(?:\.\.\/)*|\/?)(?:[\w-]+(?:\/[\w-]+)+)?[\w-]+\.h(?:h|pp|\+\+)?|[a-z]\w*)>/,null])}else{X.push([j,/^#[^\r\n]*/,null,"#"])}}if(af.cStyleComments){ab.push([j,/^\/\/[^\r\n]*/,null]);ab.push([j,/^\/\*[\s\S]*?(?:\*\/|$)/,null])}var W=af.regexLiterals;if(W){var Y=W>1?"":"\n\r";var aa=Y?".":"[\\S\\s]";var Z=("/(?=[^/*"+Y+"])(?:[^/\\x5B\\x5C"+Y+"]|\\x5C"+aa+"|\\x5B(?:[^\\x5C\\x5D"+Y+"]|\\x5C"+aa+")*(?:\\x5D|$))+/");ab.push(["lang-regex",RegExp("^"+O+"("+Z+")")])}var ae=af.types;if(ae){ab.push([R,ae])}var ac=(""+af.keywords).replace(/^ | $/g,"");if(ac.length){ab.push([B,new RegExp("^(?:"+ac.replace(/[\s,]+/g,"|")+")\\b"),null])}X.push([H,/^\s+/,null," \r\n\t\xA0"]);var V="^.[^\\s\\w.$@'\"`/\\\\]*";if(af.regexLiterals){V+="(?!s*/)"}ab.push([I,/^@[a-z_$][a-z_$@0-9]*/i,null],[R,/^(?:[@_]?[A-Z]+[a-z][A-Za-z_$@0-9]*|\w+_t\b)/,null],[H,/^[a-z_$][a-z_$@0-9]*/i,null],[I,new RegExp("^(?:0x[a-f0-9]+|(?:\\d(?:_\\d+)*\\d*(?:\\.\\d*)?|\\.\\d\\+)(?:e[+\\-]?\\d+)?)[a-z]*","i"),null,"0123456789"],[H,/^\\[\s\S]?/,null],[N,new RegExp(V),null]);return f(X,ab)}var M=h({keywords:C,hashComments:true,cStyleComments:true,multiLineStrings:true,regexLiterals:true});function T(X,ai,ab){var W=/(?:^|\s)nocode(?:\s|$)/;var ad=/\r\n?|\n/;var ae=X.ownerDocument;var ah=ae.createElement("li");while(X.firstChild){ah.appendChild(X.firstChild)}var Y=[ah];function ag(ao){var an=ao.nodeType;if(an==1&&!W.test(ao.className)){if("br"===ao.nodeName){af(ao);if(ao.parentNode){ao.parentNode.removeChild(ao)}}else{for(var aq=ao.firstChild;aq;aq=aq.nextSibling){ag(aq)}}}else{if((an==3||an==4)&&ab){var ap=ao.nodeValue;var al=ap.match(ad);if(al){var ak=ap.substring(0,al.index);ao.nodeValue=ak;var aj=ap.substring(al.index+al[0].length);if(aj){var am=ao.parentNode;am.insertBefore(ae.createTextNode(aj),ao.nextSibling)}af(ao);if(!ak){ao.parentNode.removeChild(ao)}}}}}function af(am){while(!am.nextSibling){am=am.parentNode;if(!am){return}}function ak(an,au){var at=au?an.cloneNode(false):an;var aq=an.parentNode;if(aq){var ar=ak(aq,1);var ap=an.nextSibling;ar.appendChild(at);for(var ao=ap;ao;ao=ap){ap=ao.nextSibling;ar.appendChild(ao)}}return at}var aj=ak(am.nextSibling,0);for(var al;(al=aj.parentNode)&&al.nodeType===1;){aj=al}Y.push(aj)}for(var aa=0;aa<Y.length;++aa){ag(Y[aa])}if(ai===(ai|0)){Y[0].setAttribute("value",ai)}var ac=ae.createElement("ol");ac.className="linenums";var Z=Math.max(0,((ai-1))|0)||0;for(var aa=0,V=Y.length;aa<V;++aa){ah=Y[aa];ah.className="L"+((aa+Z)%10);if(!ah.firstChild){ah.appendChild(ae.createTextNode("\xA0"))}ac.appendChild(ah)}X.appendChild(ac)}function F(ag){var Y=/\bMSIE\s(\d+)/.exec(navigator.userAgent);Y=Y&&+Y[1]<=8;var ap=/\n/g;var ao=ag.sourceCode;var aq=ao.length;var Z=0;var ae=ag.spans;var W=ae.length;var ak=0;var ab=ag.decorations;var ac=ab.length;var ad=0;ab[ac]=aq;var aw,au;for(au=aw=0;au<ac;){if(ab[au]!==ab[au+2]){ab[aw++]=ab[au++];ab[aw++]=ab[au++]}else{au+=2}}ac=aw;for(au=aw=0;au<ac;){var ax=ab[au];var af=ab[au+1];var aa=au+2;while(aa+2<=ac&&ab[aa+1]===af){aa+=2}ab[aw++]=ax;ab[aw++]=af;au=aa}ac=ab.length=aw;var av=ag.sourceNode;var al;if(av){al=av.style.display;av.style.display="none"}try{var ai=null;while(ak<W){var aj=ae[ak];var V=ae[ak+2]||aq;var at=ab[ad+2]||aq;var aa=Math.min(V,at);var an=ae[ak+1];var X;if(an.nodeType!==1&&(X=ao.substring(Z,aa))){if(Y){X=X.replace(ap,"\r")}an.nodeValue=X;var am=an.ownerDocument;var ar=am.createElement("span");ar.className=ab[ad+1];var ah=an.parentNode;ah.replaceChild(ar,an);ar.appendChild(an);if(Z<V){ae[ak+1]=an=am.createTextNode(ao.substring(aa,V));ah.insertBefore(an,ar.nextSibling)}}Z=aa;if(Z>=V){ak+=2}if(Z>=at){ad+=2}}}finally{if(av){av.style.display=al}}}var t={};function c(X,Y){for(var V=Y.length;--V>=0;){var W=Y[V];if(!t.hasOwnProperty(W)){t[W]=X}else{if(P.console){console.warn("cannot override language handler %s",W)}}}}function q(W,V){if(!(W&&t.hasOwnProperty(W))){W=/^\s*</.test(V)?"default-markup":"default-code"}return t[W]}c(M,["default-code"]);c(f([],[[H,/^[^<?]+/],[G,/^<!\w[^>]*(?:>|$)/],[j,/^<\!--[\s\S]*?(?:-\->|$)/],["lang-",/^<\?([\s\S]+?)(?:\?>|$)/],["lang-",/^<%([\s\S]+?)(?:%>|$)/],[N,/^(?:<[%?]|[%?]>)/],["lang-",/^<xmp\b[^>]*>([\s\S]+?)<\/xmp\b[^>]*>/i],["lang-js",/^<script\b[^>]*>([\s\S]*?)(<\/script\b[^>]*>)/i],["lang-css",/^<style\b[^>]*>([\s\S]*?)(<\/style\b[^>]*>)/i],["lang-in.tag",/^(<\/?[a-z][^<>]*>)/i]]),["default-markup","htm","html","mxml","xhtml","xml","xsl"]);c(f([[H,/^[\s]+/,null," \t\r\n"],[n,/^(?:\"[^\"]*\"?|\'[^\']*\'?)/,null,"\"'"]],[[m,/^^<\/?[a-z](?:[\w.:-]*\w)?|\/?>$/i],[S,/^(?!style[\s=]|on)[a-z](?:[\w:-]*\w)?/i],["lang-uq.val",/^=\s*([^>\'\"\s]*(?:[^>\'\"\s\/]|\/(?=\s)))/],[N,/^[=<>\/]+/],["lang-js",/^on\w+\s*=\s*\"([^\"]+)\"/i],["lang-js",/^on\w+\s*=\s*\'([^\']+)\'/i],["lang-js",/^on\w+\s*=\s*([^\"\'>\s]+)/i],["lang-css",/^style\s*=\s*\"([^\"]+)\"/i],["lang-css",/^style\s*=\s*\'([^\']+)\'/i],["lang-css",/^style\s*=\s*([^\"\'>\s]+)/i]]),["in.tag"]);c(f([],[[n,/^[\s\S]+/]]),["uq.val"]);c(h({keywords:l,hashComments:true,cStyleComments:true,types:e}),["c","cc","cpp","cxx","cyc","m"]);c(h({keywords:"null,true,false"}),["json"]);c(h({keywords:U,hashComments:true,cStyleComments:true,verbatimStrings:true,types:e}),["cs"]);c(h({keywords:y,cStyleComments:true}),["java"]);c(h({keywords:J,hashComments:true,multiLineStrings:true}),["bash","bsh","csh","sh"]);c(h({keywords:K,hashComments:true,multiLineStrings:true,tripleQuotedStrings:true}),["cv","py","python"]);c(h({keywords:s,hashComments:true,multiLineStrings:true,regexLiterals:2}),["perl","pl","pm"]);c(h({keywords:g,hashComments:true,multiLineStrings:true,regexLiterals:true}),["rb","ruby"]);c(h({keywords:x,cStyleComments:true,regexLiterals:true}),["javascript","js"]);c(h({keywords:r,hashComments:3,cStyleComments:true,multilineStrings:true,tripleQuotedStrings:true,regexLiterals:true}),["coffee"]);c(h({keywords:z,cStyleComments:true,multilineStrings:true}),["rc","rs","rust"]);c(f([],[[E,/^[\s\S]+/]]),["regex"]);function d(Y){var X=Y.langExtension;try{var V=b(Y.sourceNode,Y.pre);var W=V.sourceCode;Y.sourceCode=W;Y.spans=V.spans;Y.basePos=0;q(X,W)(Y);F(Y)}catch(Z){if(P.console){console.log(Z&&Z.stack||Z)}}}function A(Z,Y,X){var V=document.createElement("div");V.innerHTML="<pre>"+Z+"</pre>";V=V.firstChild;if(X){T(V,X,true)}var W={langExtension:Y,numberLines:X,sourceNode:V,pre:1};d(W);return V.innerHTML}function w(al,ab){var ah=ab||document.body;var ao=ah.ownerDocument||document;function aa(aq){return ah.getElementsByTagName(aq)}var ad=[aa("pre"),aa("code"),aa("xmp")];var ae=[];for(var ak=0;ak<ad.length;++ak){for(var aj=0,ag=ad[ak].length;aj<ag;++aj){ae.push(ad[ak][aj])}}ad=null;var ap=Date;if(!ap.now){ap={now:function(){return +(new Date)}}}var ai=0;var ac;var X=/\blang(?:uage)?-([\w.]+)(?!\S)/;var an=/\bprettyprint\b/;var W=/\bprettyprinted\b/;var Z=/pre|xmp/i;var V=/^code$/i;var Y=/^(?:pre|code|xmp)$/i;var am={};function af(){var ay=(P.PR_SHOULD_USE_CONTINUATION?ap.now()+250:Infinity);for(;ai<ae.length&&ap.now()<ay;ai++){var aA=ae[ai];var aH=am;for(var ax=aA;(ax=ax.previousSibling);){var aE=ax.nodeType;var aF=(aE===7||aE===8)&&ax.nodeValue;if(aF?!/^\??prettify\b/.test(aF):(aE!==3||/\S/.test(ax.nodeValue))){break}if(aF){aH={};aF.replace(/\b(\w+)=([\w:.%+-]+)/g,function(aJ,aI,aK){aH[aI]=aK});break}}var aB=aA.className;if((aH!==am||an.test(aB))&&!W.test(aB)){var aD=false;for(var au=aA.parentNode;au;au=au.parentNode){var aG=au.tagName;if(Y.test(aG)&&au.className&&an.test(au.className)){aD=true;break}}if(!aD){aA.className+=" prettyprinted";var aw=aH.lang;if(!aw){aw=aB.match(X);var ar;if(!aw&&(ar=o(aA))&&V.test(ar.tagName)){aw=ar.className.match(X)}if(aw){aw=aw[1]}}var av;if(Z.test(aA.tagName)){av=1}else{var at=aA.currentStyle;var az=ao.defaultView;var aq=(at?at.whiteSpace:(az&&az.getComputedStyle)?az.getComputedStyle(aA,null).getPropertyValue("white-space"):0);av=aq&&"pre"===aq.substring(0,3)}var aC=aH.linenums;if(!(aC=aC==="true"||+aC)){aC=aB.match(/\blinenums\b(?::(\d+))?/);aC=aC?aC[1]&&aC[1].length?+aC[1]:true:false}if(aC){T(aA,aC,av)}ac={langExtension:aw,sourceNode:aA,numberLines:aC,pre:av};d(ac)}}}if(ai<ae.length){setTimeout(af,250)}else{if("function"===typeof al){al()}}}af()}var a=P.PR={createSimpleLexer:f,registerLangHandler:c,sourceDecorator:h,PR_ATTRIB_NAME:S,PR_ATTRIB_VALUE:n,PR_COMMENT:j,PR_DECLARATION:G,PR_KEYWORD:B,PR_LITERAL:I,PR_NOCODE:Q,PR_PLAIN:H,PR_PUNCTUATION:N,PR_SOURCE:L,PR_STRING:E,PR_TAG:m,PR_TYPE:R,prettyPrintOne:IN_GLOBAL_SCOPE?(P.prettyPrintOne=A):(prettyPrintOne=A),prettyPrint:prettyPrint=IN_GLOBAL_SCOPE?(P.prettyPrint=w):(prettyPrint=w)};if(typeof define==="function"&&define.amd){define("google-code-prettify",[],function(){return a})}})();;
+PR.registerLangHandler(PR.createSimpleLexer([[PR.PR_PLAIN,/^[ \t\r\n\f]+/,null," \t\r\n\f"]],[[PR.PR_STRING,/^\"(?:[^\n\r\f\\\"]|\\(?:\r\n?|\n|\f)|\\[\s\S])*\"/,null],[PR.PR_STRING,/^\'(?:[^\n\r\f\\\']|\\(?:\r\n?|\n|\f)|\\[\s\S])*\'/,null],["lang-css-str",/^url\(([^\)\"\']+)\)/i],[PR.PR_KEYWORD,/^(?:url|rgb|\!important|@import|@page|@media|@charset|inherit)(?=[^\-\w]|$)/i,null],["lang-css-kw",/^(-?(?:[_a-z]|(?:\\[0-9a-f]+ ?))(?:[_a-z0-9\-]|\\(?:\\[0-9a-f]+ ?))*)\s*:/i],[PR.PR_COMMENT,/^\/\*[^*]*\*+(?:[^\/*][^*]*\*+)*\//],[PR.PR_COMMENT,/^(?:<!--|-->)/],[PR.PR_LITERAL,/^(?:\d+|\d*\.\d+)(?:%|[a-z]+)?/i],[PR.PR_LITERAL,/^#(?:[0-9a-f]{3}){1,2}\b/i],[PR.PR_PLAIN,/^-?(?:[_a-z]|(?:\\[\da-f]+ ?))(?:[_a-z\d\-]|\\(?:\\[\da-f]+ ?))*/i],[PR.PR_PUNCTUATION,/^[^\s\w\'\"]+/]]),["css"]);PR.registerLangHandler(PR.createSimpleLexer([],[[PR.PR_KEYWORD,/^-?(?:[_a-z]|(?:\\[\da-f]+ ?))(?:[_a-z\d\-]|\\(?:\\[\da-f]+ ?))*/i]]),["css-kw"]);PR.registerLangHandler(PR.createSimpleLexer([],[[PR.PR_STRING,/^[^\)\"\']+/]]),["css-str"]);;
+PR.registerLangHandler(PR.createSimpleLexer([[PR.PR_PLAIN,/^[\t\n\r \xA0]+/,null,"\t\n\r \xA0"],[PR.PR_STRING,/^(?:"(?:[^\"\\]|\\.)*"|'(?:[^\'\\]|\\.)*')/,null,"\"'"]],[[PR.PR_COMMENT,/^(?:--[^\r\n]*|\/\*[\s\S]*?(?:\*\/|$))/],[PR.PR_KEYWORD,/^(?:ADD|ALL|ALTER|AND|ANY|APPLY|AS|ASC|AUTHORIZATION|BACKUP|BEGIN|BETWEEN|BREAK|BROWSE|BULK|BY|CASCADE|CASE|CHECK|CHECKPOINT|CLOSE|CLUSTERED|COALESCE|COLLATE|COLUMN|COMMIT|COMPUTE|CONNECT|CONSTRAINT|CONTAINS|CONTAINSTABLE|CONTINUE|CONVERT|CREATE|CROSS|CURRENT|CURRENT_DATE|CURRENT_TIME|CURRENT_TIMESTAMP|CURRENT_USER|CURSOR|DATABASE|DBCC|DEALLOCATE|DECLARE|DEFAULT|DELETE|DENY|DESC|DISK|DISTINCT|DISTRIBUTED|DOUBLE|DROP|DUMMY|DUMP|ELSE|END|ERRLVL|ESCAPE|EXCEPT|EXEC|EXECUTE|EXISTS|EXIT|FETCH|FILE|FILLFACTOR|FOLLOWING|FOR|FOREIGN|FREETEXT|FREETEXTTABLE|FROM|FULL|FUNCTION|GOTO|GRANT|GROUP|HAVING|HOLDLOCK|IDENTITY|IDENTITYCOL|IDENTITY_INSERT|IF|IN|INDEX|INNER|INSERT|INTERSECT|INTO|IS|JOIN|KEY|KILL|LEFT|LIKE|LINENO|LOAD|MATCH|MATCHED|MERGE|NATURAL|NATIONAL|NOCHECK|NONCLUSTERED|NOCYCLE|NOT|NULL|NULLIF|OF|OFF|OFFSETS|ON|OPEN|OPENDATASOURCE|OPENQUERY|OPENROWSET|OPENXML|OPTION|OR|ORDER|OUTER|OVER|PARTITION|PERCENT|PIVOT|PLAN|PRECEDING|PRECISION|PRIMARY|PRINT|PROC|PROCEDURE|PUBLIC|RAISERROR|READ|READTEXT|RECONFIGURE|REFERENCES|REPLICATION|RESTORE|RESTRICT|RETURN|REVOKE|RIGHT|ROLLBACK|ROWCOUNT|ROWGUIDCOL|ROWS?|RULE|SAVE|SCHEMA|SELECT|SESSION_USER|SET|SETUSER|SHUTDOWN|SOME|START|STATISTICS|SYSTEM_USER|TABLE|TEXTSIZE|THEN|TO|TOP|TRAN|TRANSACTION|TRIGGER|TRUNCATE|TSEQUAL|UNBOUNDED|UNION|UNIQUE|UNPIVOT|UPDATE|UPDATETEXT|USE|USER|USING|VALUES|VARYING|VIEW|WAITFOR|WHEN|WHERE|WHILE|WITH|WITHIN|WRITETEXT|XML)(?=[^\w-]|$)/i,null],[PR.PR_LITERAL,/^[+-]?(?:0x[\da-f]+|(?:(?:\.\d+|\d+(?:\.\d*)?)(?:e[+\-]?\d+)?))/i],[PR.PR_PLAIN,/^[a-z_][\w-]*/i],[PR.PR_PUNCTUATION,/^[^\w\t\n\r \xA0\"\'][^\w\t\n\r \xA0+\-\"\']*/]]),["sql"]);;
+(function(b){if(typeof define==="function"&&define.amd){define(["jquery"],b)}else{if(typeof exports==="object"){module.exports=b}else{b(jQuery)}}}(function(d){d.fn.bgiframe=function(f){f=d.extend({top:"auto",left:"auto",width:"auto",height:"auto",opacity:true,src:"javascript:false;",conditional:/MSIE 6\.0/.test(navigator.userAgent)},f);if(!d.isFunction(f.conditional)){var a=f.conditional;f.conditional=function(){return a}}var b=d('<iframe class="bgiframe"frameborder="0"tabindex="-1"src="'+f.src+'"style="display:block;position:absolute;z-index:-1;"/>');return this.each(function(){var e=d(this);if(f.conditional(this)===false){return}var i=e.children("iframe.bgiframe");var j=i.length===0?b.clone():i;j.css({top:f.top=="auto"?((parseInt(e.css("borderTopWidth"),10)||0)*-1)+"px":c(f.top),left:f.left=="auto"?((parseInt(e.css("borderLeftWidth"),10)||0)*-1)+"px":c(f.left),width:f.width=="auto"?(this.offsetWidth+"px"):c(f.width),height:f.height=="auto"?(this.offsetHeight+"px"):c(f.height),opacity:f.opacity===true?0:undefined});if(i.length===0){e.prepend(j)}})};d.fn.bgIframe=d.fn.bgiframe;function c(a){return a&&a.constructor===Number?a+"px":a}}));;
+(function(a){a.fn.hoverIntent=function(h,j,b){var d={interval:100,sensitivity:7,timeout:0};if(typeof h==="object"){d=a.extend(d,h)}else{if(a.isFunction(j)){d=a.extend(d,{over:h,out:j,selector:b})}else{d=a.extend(d,{over:h,out:h,selector:j})}}var f,e,m,l;var k=function(n){f=n.pageX;e=n.pageY};var i=function(o,n){n.hoverIntent_t=clearTimeout(n.hoverIntent_t);if((Math.abs(m-f)+Math.abs(l-e))<d.sensitivity){a(n).off("mousemove.hoverIntent",k);n.hoverIntent_s=1;return d.over.apply(n,[o])}else{m=f;l=e;n.hoverIntent_t=setTimeout(function(){i(o,n)},d.interval)}};var c=function(o,n){n.hoverIntent_t=clearTimeout(n.hoverIntent_t);n.hoverIntent_s=0;return d.out.apply(n,[o])};var g=function(p){var o=jQuery.extend({},p);var n=this;if(n.hoverIntent_t){n.hoverIntent_t=clearTimeout(n.hoverIntent_t)}if(p.type=="mouseenter"){m=o.pageX;l=o.pageY;a(n).on("mousemove.hoverIntent",k);if(n.hoverIntent_s!=1){n.hoverIntent_t=setTimeout(function(){i(o,n)},d.interval)}}else{a(n).off("mousemove.hoverIntent",k);if(n.hoverIntent_s==1){n.hoverIntent_t=setTimeout(function(){c(o,n)},d.timeout)}}};return this.on({"mouseenter.hoverIntent":g,"mouseleave.hoverIntent":g},d.selector)}})(jQuery);;
+(function(b){var a=(function(){var c={bcClass:"sf-breadcrumb",menuClass:"sf-js-enabled",anchorClass:"sf-with-ul",menuArrowClass:"sf-arrows"},e=(function(){var q=/iPhone|iPad|iPod/i.test(navigator.userAgent);if(q){b(window).load(function(){b("body").children().on("click",b.noop)})}return q})(),l=(function(){var q=document.documentElement.style;return("behavior" in q&&"fill" in q&&/iemobile/i.test(navigator.userAgent))})(),n=function(r,s){var q=c.menuClass;if(s.cssArrows){q+=" "+c.menuArrowClass}r.toggleClass(q)},j=function(q,r){return q.find("li."+r.pathClass).slice(0,r.pathLevels).addClass(r.hoverClass+" "+c.bcClass).filter(function(){return(b(this).children(r.popUpSelector).hide().show().length)}).removeClass(r.pathClass)},o=function(q){q.children("a").toggleClass(c.anchorClass)},f=function(q){var r=q.css("ms-touch-action");r=(r==="pan-y")?"auto":"pan-y";q.css("ms-touch-action",r)},k=function(s,t){var q="li:has("+t.popUpSelector+")";if(b.fn.hoverIntent&&!t.disableHI){s.hoverIntent(m,g,q)}else{s.on("mouseenter.superfish",q,m).on("mouseleave.superfish",q,g)}var r="MSPointerDown.superfish";if(!e){r+=" touchend.superfish"}if(l){r+=" mousedown.superfish"}s.on("focusin.superfish","li",m).on("focusout.superfish","li",g).on(r,"a",t,i)},i=function(s){var r=b(this),q=r.siblings(s.data.popUpSelector);if(q.length>0&&q.is(":hidden")){r.one("click.superfish",false);if(s.type==="MSPointerDown"){r.trigger("focus")}else{b.proxy(m,r.parent("li"))()}}},m=function(){var q=b(this),r=p(q);clearTimeout(r.sfTimer);q.siblings().superfish("hide").end().superfish("show")},g=function(){var q=b(this),r=p(q);if(e){b.proxy(h,q,r)()}else{clearTimeout(r.sfTimer);r.sfTimer=setTimeout(b.proxy(h,q,r),r.delay)}},h=function(q){q.retainPath=(b.inArray(this[0],q.$path)>-1);this.superfish("hide");if(!this.parents("."+q.hoverClass).length){q.onIdle.call(d(this));if(q.$path.length){b.proxy(m,q.$path)()}}},d=function(q){return q.closest("."+c.menuClass)},p=function(q){return d(q).data("sf-options")};return{hide:function(r){if(this.length){var u=this,v=p(u);if(!v){return this}var s=(v.retainPath===true)?v.$path:"",q=u.find("li."+v.hoverClass).add(this).not(s).removeClass(v.hoverClass).children(v.popUpSelector),t=v.speedOut;if(r){q.show();t=0}v.retainPath=false;v.onBeforeHide.call(q);q.stop(true,true).animate(v.animationOut,t,function(){var w=b(this);v.onHide.call(w)})}return this},show:function(){var s=p(this);if(!s){return this}var r=this.addClass(s.hoverClass),q=r.children(s.popUpSelector);s.onBeforeShow.call(q);q.stop(true,true).animate(s.animation,s.speed,function(){s.onShow.call(q)});return this},destroy:function(){return this.each(function(){var r=b(this),s=r.data("sf-options"),q;if(!s){return false}q=r.find(s.popUpSelector).parent("li");clearTimeout(s.sfTimer);n(r,s);o(q);f(r);r.off(".superfish").off(".hoverIntent");q.children(s.popUpSelector).attr("style",function(t,u){return u.replace(/display[^;]+;?/g,"")});s.$path.removeClass(s.hoverClass+" "+c.bcClass).addClass(s.pathClass);r.find("."+s.hoverClass).removeClass(s.hoverClass);s.onDestroy.call(r);r.removeData("sf-options")})},init:function(q){return this.each(function(){var s=b(this);if(s.data("sf-options")){return false}var t=b.extend({},b.fn.superfish.defaults,q),r=s.find(t.popUpSelector).parent("li");t.$path=j(s,t);s.data("sf-options",t);n(s,t);o(r);f(s);k(s,t);r.not("."+c.bcClass).superfish("hide",true);t.onInit.call(this)})}}})();b.fn.superfish=function(d,c){if(a[d]){return a[d].apply(this,Array.prototype.slice.call(arguments,1))}else{if(typeof d==="object"||!d){return a.init.apply(this,arguments)}else{return b.error("Method "+d+" does not exist on jQuery.fn.superfish")}}};b.fn.superfish.defaults={popUpSelector:"ul,.sf-mega",hoverClass:"sfHover",pathClass:"overrideThisToUse",pathLevels:1,delay:800,animation:{opacity:"show"},animationOut:{opacity:"hide"},speed:"normal",speedOut:"fast",cssArrows:true,disableHI:false,onInit:b.noop,onBeforeShow:b.noop,onShow:b.noop,onBeforeHide:b.noop,onHide:b.noop,onIdle:b.noop,onDestroy:b.noop};b.fn.extend({hideSuperfishUl:a.hide,showSuperfishUl:a.show})})(jQuery);;
+(function(a){Drupal.behaviors.niceMenus={attach:function(b,c){a("ul.nice-menu:not(.nice-menus-processed)").addClass("nice-menus-processed").each(function(){a(this).superfish({hoverClass:"over",autoArrows:false,dropShadows:false,delay:Drupal.settings.nice_menus_options.delay,speed:Drupal.settings.nice_menus_options.speed});a(this).find("ul").bgIframe({opacity:false});a("ul.nice-menu ul").css("display","none")})}}})(jQuery);;
+/*jslint browser: true */ /*global jQuery: true */
+
+/**
+ * jQuery Cookie plugin
+ *
+ * Copyright (c) 2010 Klaus Hartl (stilbuero.de)
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ */
+
+// TODO JsDoc
+
+/**
+ * Create a cookie with the given key and value and other optional parameters.
+ *
+ * @example $.cookie('the_cookie', 'the_value');
+ * @desc Set the value of a cookie.
+ * @example $.cookie('the_cookie', 'the_value', { expires: 7, path: '/', domain: 'jquery.com', secure: true });
+ * @desc Create a cookie with all available options.
+ * @example $.cookie('the_cookie', 'the_value');
+ * @desc Create a session cookie.
+ * @example $.cookie('the_cookie', null);
+ * @desc Delete a cookie by passing null as value. Keep in mind that you have to use the same path and domain
+ *       used when the cookie was set.
+ *
+ * @param String key The key of the cookie.
+ * @param String value The value of the cookie.
+ * @param Object options An object literal containing key/value pairs to provide optional cookie attributes.
+ * @option Number|Date expires Either an integer specifying the expiration date from now on in days or a Date object.
+ *                             If a negative value is specified (e.g. a date in the past), the cookie will be deleted.
+ *                             If set to null or omitted, the cookie will be a session cookie and will not be retained
+ *                             when the the browser exits.
+ * @option String path The value of the path atribute of the cookie (default: path of page that created the cookie).
+ * @option String domain The value of the domain attribute of the cookie (default: domain of page that created the cookie).
+ * @option Boolean secure If true, the secure attribute of the cookie will be set and the cookie transmission will
+ *                        require a secure protocol (like HTTPS).
+ * @type undefined
+ *
+ * @name $.cookie
+ * @cat Plugins/Cookie
+ * @author Klaus Hartl/klaus.hartl@stilbuero.de
+ */
+
+/**
+ * Get the value of a cookie with the given key.
+ *
+ * @example $.cookie('the_cookie');
+ * @desc Get the value of a cookie.
+ *
+ * @param String key The key of the cookie.
+ * @return The value of the cookie.
+ * @type String
+ *
+ * @name $.cookie
+ * @cat Plugins/Cookie
+ * @author Klaus Hartl/klaus.hartl@stilbuero.de
+ */
+jQuery.cookie = function (key, value, options) {
+
+    // key and value given, set cookie...
+    if (arguments.length > 1 && (value === null || typeof value !== "object")) {
+        options = jQuery.extend({}, options);
+
+        if (value === null) {
+            options.expires = -1;
+        }
+
+        if (typeof options.expires === 'number') {
+            var days = options.expires, t = options.expires = new Date();
+            t.setDate(t.getDate() + days);
+        }
+
+        return (document.cookie = [
+            encodeURIComponent(key), '=',
+            options.raw ? String(value) : encodeURIComponent(String(value)),
+            options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+            options.path ? '; path=' + options.path : '',
+            options.domain ? '; domain=' + options.domain : '',
+            options.secure ? '; secure' : ''
+        ].join(''));
+    }
+
+    // key and possibly options given, get cookie...
+    options = value || {};
+    var result, decode = options.raw ? function (s) { return s; } : decodeURIComponent;
+    return (result = new RegExp('(?:^|; )' + encodeURIComponent(key) + '=([^;]*)').exec(document.cookie)) ? decode(result[1]) : null;
+};
+;
+(function ($) {
+
+/**
+ * Retrieves the summary for the first element.
+ */
+$.fn.drupalGetSummary = function () {
+  var callback = this.data('summaryCallback');
+  return (this[0] && callback) ? $.trim(callback(this[0])) : '';
+};
+
+/**
+ * Sets the summary for all matched elements.
+ *
+ * @param callback
+ *   Either a function that will be called each time the summary is
+ *   retrieved or a string (which is returned each time).
+ */
+$.fn.drupalSetSummary = function (callback) {
+  var self = this;
+
+  // To facilitate things, the callback should always be a function. If it's
+  // not, we wrap it into an anonymous function which just returns the value.
+  if (typeof callback != 'function') {
+    var val = callback;
+    callback = function () { return val; };
+  }
+
+  return this
+    .data('summaryCallback', callback)
+    // To prevent duplicate events, the handlers are first removed and then
+    // (re-)added.
+    .unbind('formUpdated.summary')
+    .bind('formUpdated.summary', function () {
+      self.trigger('summaryUpdated');
+    })
+    // The actual summaryUpdated handler doesn't fire when the callback is
+    // changed, so we have to do this manually.
+    .trigger('summaryUpdated');
+};
+
+/**
+ * Sends a 'formUpdated' event each time a form element is modified.
+ */
+Drupal.behaviors.formUpdated = {
+  attach: function (context) {
+    // These events are namespaced so that we can remove them later.
+    var events = 'change.formUpdated click.formUpdated blur.formUpdated keyup.formUpdated';
+    $(context)
+      // Since context could be an input element itself, it's added back to
+      // the jQuery object and filtered again.
+      .find(':input').andSelf().filter(':input')
+      // To prevent duplicate events, the handlers are first removed and then
+      // (re-)added.
+      .unbind(events).bind(events, function () {
+        $(this).trigger('formUpdated');
+      });
+  }
+};
+
+/**
+ * Prepopulate form fields with information from the visitor cookie.
+ */
+Drupal.behaviors.fillUserInfoFromCookie = {
+  attach: function (context, settings) {
+    $('form.user-info-from-cookie').once('user-info-from-cookie', function () {
+      var formContext = this;
+      $.each(['name', 'mail', 'homepage'], function () {
+        var $element = $('[name=' + this + ']', formContext);
+        var cookie = $.cookie('Drupal.visitor.' + this);
+        if ($element.length && cookie) {
+          $element.val(cookie);
+        }
+      });
+    });
+  }
+};
+
+})(jQuery);
+;
