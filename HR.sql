@@ -1,8 +1,20 @@
+SELECT
+    *
+FROM
+    regions;
 
-SELECT * FROM regions;
 DESCRIBE countries;
-SELECT DISTINCT department_id, job_id FROM employees;
-SELECT DISTINCT department_id FROM employees;
+
+SELECT DISTINCT
+    department_id,
+    job_id
+FROM
+    employees;
+
+SELECT DISTINCT
+    department_id
+FROM
+    employees;
 SELECT department_id FROM employees
 DESCRIBE employees;
 SELECT job_id AS JOB, min_salary AS minimun_salary FROM jobs;
@@ -230,9 +242,80 @@ select * from employees where first_name like 'J%';
 select * from employees where first_name like 'S%%n';
 --Indicar los países que tienen una “r” en la segunda letra (Tabla COUNTRIES)
 select country_name from countries where country_name like '_r%';
+--indica los empleado que no tiene comision tambien puede ser tipo not null
+select * from employees where commission_pct is null;
+--Listar las ciudades de la tabla LOCATIONS no tienen STATE_PROVINCE
+SELECT * FROM LOCATIONS WHERE STATE_PROVINCE is null;
+--Averiguar el nombre, salario y comisión de aquellos empleados que tienen
+--comisión. También debemos visualizar una columna calculada denominada
+--“Sueldo Total”, que sea el sueldo más la comisión
+SELECT FIRST_NAME,SALARY,COMMISSION_PCT,SALARY+(SALARY*COMMISSION_PCT/100) AS "Salario total" FROM EMPLOYEES WHERE COMMISSION_PCT IS NULL;
+--and or not 
+--and se tiene que cumplir ambas condiciones 
+--or se tienen que cumplir al menor 1 
+--not devuelve lo contrario 
+--and
+select * from employees where salary>5000 and department_id=50;
+--or
+select * from employees where salary>5000 or department_id=50;
+--not
+select * from employees where department_id not in (50,60);
 
+--plsql
+begin
+DBMS_OUTPUT.PUT_LINE('hola mundo.');
+END;
+--declarar variables Y MUESTRA SI ES MAYOR O MENOR
+DECLARE
+MI_NUMERO NUMBER(8):= 5;
+BEGIN
+IF (MI_NUMERO > 10) THEN 
+DBMS_OUTPUT.PUT_LINE('MI NUMERO ES MAYOR DE 10 ');
+ELSE
+DBMS_OUTPUT.PUT_LINE('MI NUMERO ES MENOR DE 10 ');
+END IF ;
+END;
+--DECLARA UNA VARIBALE Y MUESTRA SU VALOR 
+DECLARE
+MI_NUMERO NUMBER(8):= &NUMERO;
+BEGIN
+DBMS_OUTPUT.PUT_LINE('EL VALOR INTRODUCIVOS ES '||mi_numero);
+END;
+/
+--ciclo while 
+declare 
+i number(8):=1;
+begin
+while (i<=10)
+loop
+DBMS_OUTPUT.PUT_LINE(i);
+i:=i+1;
+end loop;
+end;
+/
+--bucle for
+declare 
+i number(8):=1;
+begin
+for i in 1..10
+loop
+DBMS_OUTPUT.PUT_LINE(i);
+end loop;
+end;
+/
+--loop 
+declare 
+i number(8):=1;
+begin
+LOOP
+    dbms_output.put_line(i);
+    EXIT WHEN i = 10;
+    i := i + 1;
+END LOOP;
 
-
+end;
+/
+--
 
 
 
